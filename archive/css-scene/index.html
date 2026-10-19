@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#17132d">
+    <title>Moonlit Doorwood</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="experience">
+      <section class="welcome" id="welcome" aria-labelledby="title">
+        <div class="welcome__content">
+          <p class="eyebrow">A seasonal preview</p>
+          <h1 id="title">Moonlit <span>Doorwood</span></h1>
+          <p class="welcome__description">
+            Follow the crooked path from the moonlit hill to a forest of
+            holiday doors. Something is waiting to be found.
+          </p>
+          <button class="enter-button" id="enter-button" type="button">
+            Enter the woods
+          </button>
+          <p class="welcome__note">A little curiosity goes a long way.</p>
+        </div>
+      </section>
+
+      <section
+        class="scene"
+        id="scene"
+        aria-label="Moonlit hill, quiet town, and holiday-door woods"
+        hidden
+      >
+        <div class="stars" aria-hidden="true"></div>
+
+        <div class="hill">
+          <div class="moon" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="hill__ridge hill__ridge--back"></div>
+          <div class="hill__ridge hill__ridge--front"></div>
+          <p class="scene-label scene-label--hill">The moonlit hill</p>
+        </div>
+
+        <div class="town">
+          <p class="scene-label scene-label--town">A town tucked away</p>
+          <div class="house house--small" aria-hidden="true">
+            <div class="house__roof"></div>
+            <div class="house__body"><i></i><i></i></div>
+          </div>
+          <div class="house house--large" aria-hidden="true">
+            <div class="house__roof"></div>
+            <div class="house__body">
+              <i></i><i></i>
+              <b></b>
+            </div>
+          </div>
+          <div class="town__mist" aria-hidden="true"></div>
+        </div>
+
+        <div class="woods">
+          <p class="scene-label scene-label--woods">The doorwood</p>
+          <div class="tree tree--left" aria-hidden="true"><i></i></div>
+          <div class="tree tree--right" aria-hidden="true"><i></i></div>
+          <div class="path" aria-hidden="true"></div>
+          <div class="doors" aria-label="Three mysterious holiday doors">
+            <div class="door door--gold" role="img" aria-label="Golden door">
+              <span></span>
+            </div>
+            <div class="door door--blue" role="img" aria-label="Blue door">
+              <span></span>
+            </div>
+            <div class="door door--rose" role="img" aria-label="Rose door">
+              <span></span>
+            </div>
+          </div>
+          <div class="fireflies" aria-hidden="true">· &nbsp; · &nbsp; ·</div>
+        </div>
+
+        <p class="scene-caption">Three little doors. Three big mysteries.</p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "asset_count": 36,
+  "canvas": [
+    720,
+    1280
+  ],
+  "all_full_rgba": true,
+  "trimmed_recomposition_identical": true,
+  "recomposed_mean_absolute_error_8bit": 0.09705692997685185,
+  "recomposed_maximum_absolute_error_8bit": 92.0,
+  "status": "Approximate reconstruction; not original layered artwork. Manual contour traces and color-guided branch extraction require edge review before production."
+}

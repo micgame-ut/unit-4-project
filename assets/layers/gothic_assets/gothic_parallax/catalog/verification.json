@@ -1,0 +1,20 @@
+{
+  "canvas": [
+    941,
+    1672
+  ],
+  "fullLayers": 24,
+  "trimmedLayers": 24,
+  "allFullLayersRGBA": true,
+  "allFullLayersFullCanvas": true,
+  "stackBuiltFromLayers": true,
+  "trimmedSetBytes": 3473002,
+  "targetBytes": 4000000,
+  "underTarget": true,
+  "sourceComparisonExcludes": "Added shutters plus 3px edge; reconstructed starfield included in comparison",
+  "sourceMeanAbsoluteError": 0.7396382197542534,
+  "webStackVsMasterPSNR_dB": 35.789299870322836,
+  "webStackVsMasterRMSE": 4.140713544183184,
+  "ornamentCount": 9,
+  "notes": "Hand traced boundaries and plausible hidden-area reconstruction. Source object surfaces retained at rest, with a reconstructed clean starfield and requested additions. Inspect contact sheet and open-door preview before extreme animation."
+}

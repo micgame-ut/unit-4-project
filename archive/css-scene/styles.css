@@ -1,0 +1,497 @@
+:root {
+  color-scheme: dark;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: #fff7ed;
+  background: #17132d;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --night: #17132d;
+  --violet: #39234f;
+  --mauve: #90609b;
+  --gold: #ffb64c;
+  --cream: #fff0c9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 280px;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 50% 37%, #45325c 0, transparent 48%),
+    linear-gradient(180deg, #21183a, var(--night) 78%);
+}
+
+button {
+  font: inherit;
+}
+
+.experience {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  height: 100svh;
+  min-height: 420px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.welcome {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: max(32px, env(safe-area-inset-top)) 28px max(32px, env(safe-area-inset-bottom));
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 44%, rgb(112 74 141 / 45%), transparent 52%),
+    linear-gradient(155deg, #291c49 0%, #21183c 55%, #17132d 100%);
+}
+
+.welcome__content {
+  width: min(100%, 460px);
+  transform: translateY(-2vh);
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: #d4b8df;
+  font-size: clamp(0.75rem, 3vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 10vw, 4rem);
+  line-height: 1.03;
+  letter-spacing: -0.055em;
+}
+
+h1 span {
+  display: block;
+  color: var(--gold);
+}
+
+.welcome__description {
+  max-width: 28rem;
+  margin: 26px auto 30px;
+  color: #f0e5f4;
+  font-size: clamp(1rem, 4.6vw, 1.4rem);
+  line-height: 1.55;
+}
+
+.enter-button {
+  min-width: 210px;
+  min-height: 60px;
+  padding: 14px 28px;
+  border: 0;
+  border-radius: 999px;
+  color: #2c1b43;
+  background: var(--gold);
+  box-shadow: 0 8px 26px rgb(10 6 24 / 28%);
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 800;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.enter-button:hover {
+  transform: translateY(-2px);
+  background: #ffca70;
+}
+
+.enter-button:focus-visible {
+  outline: 3px solid #fff7ed;
+  outline-offset: 5px;
+}
+
+.welcome__note {
+  margin: 18px 0 0;
+  color: #d4b8df;
+  font-size: 0.95rem;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #111a35 0%, #283251 42%, #422b57 72%, #1b1c34 100%);
+}
+
+.scene[hidden] {
+  display: none;
+}
+
+.stars {
+  position: absolute;
+  inset: 0 0 48%;
+  opacity: 0.82;
+  background-image:
+    radial-gradient(circle, #fff3d0 1px, transparent 1.8px),
+    radial-gradient(circle, #f3d8ff 1px, transparent 1.8px),
+    radial-gradient(circle, #fff3d0 1px, transparent 1.8px);
+  background-position: 7% 15%, 84% 19%, 43% 39%;
+  background-size: 97px 113px, 131px 139px, 173px 151px;
+}
+
+.hill {
+  position: absolute;
+  inset: 0 0 68%;
+  overflow: hidden;
+}
+
+.moon {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  width: clamp(100px, 30vw, 170px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(circle at 32% 34%, #e7cb8b 0 4%, transparent 5%),
+    radial-gradient(circle at 66% 60%, #e7cb8b 0 6%, transparent 7%),
+    radial-gradient(circle at 60% 26%, #f3dca6 0 3%, transparent 4%),
+    #ffe9ae;
+  box-shadow: 0 0 42px rgb(255 219 151 / 34%), 0 0 95px rgb(255 219 151 / 17%);
+}
+
+.hill__ridge {
+  position: absolute;
+  bottom: -34%;
+  width: 78%;
+  height: 74%;
+  border-radius: 50% 50% 0 0;
+}
+
+.hill__ridge--back {
+  left: -18%;
+  transform: rotate(-12deg);
+  background: linear-gradient(160deg, #535073, #302746 72%);
+}
+
+.hill__ridge--front {
+  right: -20%;
+  bottom: -43%;
+  transform: rotate(11deg);
+  background: linear-gradient(180deg, #38304f, #322548);
+}
+
+.scene-label {
+  position: absolute;
+  z-index: 5;
+  margin: 0;
+  color: #f8e9d4;
+  font-size: clamp(0.7rem, 2.8vw, 0.92rem);
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-shadow: 0 2px 8px #151126;
+  text-transform: uppercase;
+}
+
+.scene-label--hill {
+  top: 6%;
+  left: 7%;
+}
+
+.town {
+  position: absolute;
+  inset: 27% 0 38%;
+  background: linear-gradient(180deg, transparent 0%, rgb(116 91 133 / 20%) 44%, transparent 100%);
+}
+
+.scene-label--town {
+  top: 8%;
+  left: 7%;
+}
+
+.house {
+  position: absolute;
+  bottom: 11%;
+  filter: drop-shadow(0 10px 12px rgb(10 8 26 / 32%));
+}
+
+.house--small {
+  left: 14%;
+  width: 25%;
+  height: 43%;
+}
+
+.house--large {
+  right: 13%;
+  bottom: 5%;
+  width: 33%;
+  height: 62%;
+}
+
+.house__roof {
+  position: absolute;
+  top: 0;
+  left: -8%;
+  width: 116%;
+  height: 52%;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  background: #25243d;
+}
+
+.house__body {
+  position: absolute;
+  right: 8%;
+  bottom: 0;
+  left: 8%;
+  height: 65%;
+  border: 2px solid #8a6e98;
+  border-radius: 30% 30% 5% 5%;
+  background: linear-gradient(145deg, #76517e, #493356);
+}
+
+.house__body i {
+  position: absolute;
+  top: 18%;
+  width: 20%;
+  height: 23%;
+  border: 2px solid #563853;
+  border-radius: 50% 50% 20% 20%;
+  background: #ffd078;
+  box-shadow: 0 0 14px rgb(255 190 95 / 45%);
+}
+
+.house__body i:first-child {
+  left: 17%;
+}
+
+.house__body i:nth-child(2) {
+  right: 17%;
+}
+
+.house__body b {
+  position: absolute;
+  bottom: 0;
+  left: 38%;
+  width: 26%;
+  height: 43%;
+  border: 2px solid #a789a4;
+  border-bottom: 0;
+  border-radius: 48% 48% 0 0;
+  background: #30243e;
+}
+
+.town__mist {
+  position: absolute;
+  right: -10%;
+  bottom: -5%;
+  left: -10%;
+  height: 28%;
+  background: linear-gradient(0deg, rgb(207 177 204 / 22%), transparent);
+}
+
+.woods {
+  position: absolute;
+  inset: 60% 0 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #302344 0%, #20203a 46%, #171a30 100%);
+}
+
+.woods::before,
+.woods::after {
+  position: absolute;
+  top: 8%;
+  width: 42%;
+  height: 70%;
+  border-radius: 50%;
+  background: #28243f;
+  content: "";
+}
+
+.woods::before {
+  left: -22%;
+}
+
+.woods::after {
+  right: -22%;
+}
+
+.scene-label--woods {
+  top: 8%;
+  left: 7%;
+}
+
+.tree {
+  position: absolute;
+  z-index: 1;
+  top: 14%;
+  width: 27%;
+  height: 80%;
+}
+
+.tree::before,
+.tree::after {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 54%;
+  border-radius: 50% 50% 38% 38%;
+  background: #48335f;
+  box-shadow: 0 35px 0 -4px #382b50, 0 67px 0 -9px #302744;
+  content: "";
+}
+
+.tree::after {
+  top: 25%;
+  transform: scale(0.74);
+  background: #523a69;
+}
+
+.tree i {
+  position: absolute;
+  top: 44%;
+  left: 47%;
+  width: 10%;
+  height: 56%;
+  background: #47344e;
+}
+
+.tree--left {
+  left: -9%;
+}
+
+.tree--right {
+  right: -9%;
+  transform: scale(0.9);
+}
+
+.path {
+  position: absolute;
+  z-index: 2;
+  bottom: -16%;
+  left: 50%;
+  width: 46%;
+  height: 88%;
+  border-radius: 50% 50% 0 0;
+  transform: translateX(-50%) perspective(120px) rotateX(12deg);
+  background:
+    radial-gradient(ellipse at 50% 17%, #a27d79 0 4%, transparent 4.5%),
+    radial-gradient(ellipse at 41% 32%, #b38f83 0 5%, transparent 5.5%),
+    radial-gradient(ellipse at 57% 48%, #9a777c 0 6%, transparent 6.5%),
+    radial-gradient(ellipse at 46% 65%, #b38f83 0 8%, transparent 8.5%),
+    linear-gradient(90deg, transparent, rgb(211 168 151 / 33%), transparent);
+}
+
+.doors {
+  position: absolute;
+  z-index: 3;
+  right: 14%;
+  bottom: 15%;
+  left: 14%;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  height: 52%;
+}
+
+.door {
+  position: relative;
+  width: clamp(38px, 12vw, 62px);
+  height: 53%;
+  border: 4px solid #211a32;
+  border-radius: 48% 48% 4px 4px;
+  box-shadow: 0 0 0 2px rgb(226 187 156 / 36%), 0 0 23px rgb(243 171 99 / 16%);
+}
+
+.door::before {
+  position: absolute;
+  inset: 9% 9% 0;
+  border: 1px solid rgb(255 234 196 / 45%);
+  border-bottom: 0;
+  border-radius: 48% 48% 0 0;
+  content: "";
+}
+
+.door span {
+  position: absolute;
+  right: 16%;
+  bottom: 32%;
+  width: 5px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #ffe4a8;
+}
+
+.door--gold {
+  height: 64%;
+  background: linear-gradient(90deg, #8c4c46, #bd7954);
+}
+
+.door--blue {
+  height: 78%;
+  background: linear-gradient(90deg, #435878, #69859a);
+}
+
+.door--rose {
+  height: 60%;
+  background: linear-gradient(90deg, #865073, #b26b81);
+}
+
+.fireflies {
+  position: absolute;
+  z-index: 4;
+  top: 34%;
+  left: 43%;
+  color: #ffdc85;
+  font-size: 1.4rem;
+  letter-spacing: 0.8em;
+  text-shadow: 0 0 10px #ffbd5e;
+}
+
+.scene-caption {
+  position: absolute;
+  z-index: 6;
+  right: 18px;
+  bottom: max(18px, env(safe-area-inset-bottom));
+  left: 18px;
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid rgb(255 241 221 / 14%);
+  border-radius: 14px;
+  color: #fff2e3;
+  background: rgb(26 20 44 / 82%);
+  font-size: clamp(0.85rem, 3.5vw, 1rem);
+  line-height: 1.35;
+  text-align: center;
+}
+
+@media (max-height: 560px) {
+  .welcome__content {
+    transform: none;
+  }
+
+  .welcome__description {
+    margin: 14px auto 16px;
+  }
+
+  .enter-button {
+    min-height: 52px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

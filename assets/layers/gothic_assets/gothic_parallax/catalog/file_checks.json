@@ -1,0 +1,290 @@
+[
+  {
+    "layer": 1,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      941,
+      1672
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 2,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      335,
+      335
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 3,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      941,
+      418
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 4,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      179,
+      173
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 5,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      941,
+      366
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 6,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      108,
+      289
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 7,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      32,
+      36
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 8,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      363,
+      325
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 9,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      312,
+      284
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 10,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      106,
+      86
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 11,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      941,
+      314
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 12,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      941,
+      1097
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 13,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      887,
+      640
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 14,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      203,
+      318
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 15,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      207,
+      323
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 16,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      334,
+      169
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 17,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      433,
+      488
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 18,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      431,
+      434
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 19,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      787,
+      361
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 20,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      355,
+      1672
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 21,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      475,
+      338
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 22,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      290,
+      1672
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 23,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      442,
+      207
+    ],
+    "cropBoundsValid": true
+  },
+  {
+    "layer": 24,
+    "mode": "RGBA",
+    "webMode": "P",
+    "webAlphaBounds": [
+      0,
+      0,
+      941,
+      268
+    ],
+    "cropBoundsValid": true
+  }
+]

@@ -1,0 +1,931 @@
+{
+  "format_version": "1.0",
+  "canvas": {
+    "width": 720,
+    "height": 1280
+  },
+  "coordinate_system": "Top-left origin; integer pixels. Bounding boxes include shadow alpha. Ascending z_order draws back to front.",
+  "source": "reference/source.jpg",
+  "limitations": [
+    "Flattened JPEG does not contain recoverable original layers or hidden detail.",
+    "Visible source detail is retained through manually traced and color-guided masks. Some boundaries can contain source-background fringes.",
+    "Covered regions use reconstructed paper materials; concealed structure is approximate. Doors use visible strip continuation.",
+    "Soft shadows are approximated as attached alpha; baked shading cannot be perfectly disentangled from a single JPEG.",
+    "Rings are solid concealed discs, with exposed rims forming the visible rings.",
+    "This pack is a reconstruction for animation prototyping and needs visual edge cleanup for final production."
+  ],
+  "verification": {
+    "asset_count": 36,
+    "canvas": [
+      720,
+      1280
+    ],
+    "all_full_rgba": true,
+    "trimmed_recomposition_identical": true,
+    "recomposed_mean_absolute_error_8bit": 0.09705692997685185,
+    "recomposed_maximum_absolute_error_8bit": 92.0,
+    "status": "Approximate reconstruction; not original layered artwork. Manual contour traces and color-guided branch extraction require edge review before production."
+  },
+  "assets": [
+    {
+      "filename": "01_sky.png",
+      "description": "Full canvas navy paper sky",
+      "z_order": 1,
+      "group": "sky",
+      "full_path": "full/01_sky.png",
+      "trimmed_path": "trimmed/01_sky.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 720,
+        "height": 1280
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 119011,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "02_moon_ring_outer.png",
+      "description": "Outer blue moon halo",
+      "z_order": 2,
+      "group": "moon",
+      "full_path": "full/02_moon_ring_outer.png",
+      "trimmed_path": "trimmed/02_moon_ring_outer.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 53,
+        "y": 24,
+        "width": 633,
+        "height": 602
+      },
+      "offset": {
+        "x": 53,
+        "y": 24
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 50650,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "03_moon_ring_middle.png",
+      "description": "Middle mauve moon halo",
+      "z_order": 3,
+      "group": "moon",
+      "full_path": "full/03_moon_ring_middle.png",
+      "trimmed_path": "trimmed/03_moon_ring_middle.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 102,
+        "y": 58,
+        "width": 534,
+        "height": 522
+      },
+      "offset": {
+        "x": 102,
+        "y": 58
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 35053,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "04_moon_ring_inner.png",
+      "description": "Inner purple moon halo",
+      "z_order": 4,
+      "group": "moon",
+      "full_path": "full/04_moon_ring_inner.png",
+      "trimmed_path": "trimmed/04_moon_ring_inner.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 139,
+        "y": 91,
+        "width": 461,
+        "height": 462
+      },
+      "offset": {
+        "x": 139,
+        "y": 91
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 28268,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "05_moon.png",
+      "description": "Warm cream moon disc",
+      "z_order": 5,
+      "group": "moon",
+      "full_path": "full/05_moon.png",
+      "trimmed_path": "trimmed/05_moon.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 170,
+        "y": 119,
+        "width": 397,
+        "height": 409
+      },
+      "offset": {
+        "x": 170,
+        "y": 119
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 80089,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "06_spiral_hill.png",
+      "description": "Continuous curled spiral summit and distant purple hill",
+      "z_order": 6,
+      "group": "town",
+      "full_path": "full/06_spiral_hill.png",
+      "trimmed_path": "trimmed/06_spiral_hill.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 0,
+        "y": 242,
+        "width": 720,
+        "height": 469
+      },
+      "offset": {
+        "x": 0,
+        "y": 242
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 79358,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "07_town_ground_teal.png",
+      "description": "Teal rolling hill behind the town",
+      "z_order": 7,
+      "group": "town",
+      "full_path": "full/07_town_ground_teal.png",
+      "trimmed_path": "trimmed/07_town_ground_teal.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 0,
+        "y": 553,
+        "width": 720,
+        "height": 196
+      },
+      "offset": {
+        "x": 0,
+        "y": 553
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 19766,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "08_fence_left.png",
+      "description": "Left cross fence and utility-like posts",
+      "z_order": 8,
+      "group": "town",
+      "full_path": "full/08_fence_left.png",
+      "trimmed_path": "trimmed/08_fence_left.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 98,
+        "y": 538,
+        "width": 151,
+        "height": 87
+      },
+      "offset": {
+        "x": 98,
+        "y": 538
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 1030,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "09_house_01_left_tall.png",
+      "description": "Left tall house, chimney, roof and lit windows",
+      "z_order": 9,
+      "group": "town",
+      "full_path": "full/09_house_01_left_tall.png",
+      "trimmed_path": "trimmed/09_house_01_left_tall.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 112,
+        "y": 416,
+        "width": 121,
+        "height": 246
+      },
+      "offset": {
+        "x": 112,
+        "y": 416
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 13742,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "10_house_02_left_small.png",
+      "description": "Small house behind the pointed chapel",
+      "z_order": 10,
+      "group": "town",
+      "full_path": "full/10_house_02_left_small.png",
+      "trimmed_path": "trimmed/10_house_02_left_small.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 203,
+        "y": 578,
+        "width": 56,
+        "height": 109
+      },
+      "offset": {
+        "x": 203,
+        "y": 578
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 1538,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "11_house_03_spire.png",
+      "description": "Narrow spired chapel with golden arched windows",
+      "z_order": 11,
+      "group": "town",
+      "full_path": "full/11_house_03_spire.png",
+      "trimmed_path": "trimmed/11_house_03_spire.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 238,
+        "y": 510,
+        "width": 70,
+        "height": 199
+      },
+      "offset": {
+        "x": 238,
+        "y": 510
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 4844,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "12_house_04_small_center.png",
+      "description": "Small central pointed house with square lit window",
+      "z_order": 12,
+      "group": "town",
+      "full_path": "full/12_house_04_small_center.png",
+      "trimmed_path": "trimmed/12_house_04_small_center.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 305,
+        "y": 569,
+        "width": 60,
+        "height": 135
+      },
+      "offset": {
+        "x": 305,
+        "y": 569
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 3297,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "13_house_05_middle_tower.png",
+      "description": "Slender middle house with two arched windows",
+      "z_order": 13,
+      "group": "town",
+      "full_path": "full/13_house_05_middle_tower.png",
+      "trimmed_path": "trimmed/13_house_05_middle_tower.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 346,
+        "y": 523,
+        "width": 65,
+        "height": 183
+      },
+      "offset": {
+        "x": 346,
+        "y": 523
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 5253,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "14_fence_center.png",
+      "description": "Short central fence rails and posts",
+      "z_order": 14,
+      "group": "town",
+      "full_path": "full/14_fence_center.png",
+      "trimmed_path": "trimmed/14_fence_center.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 280,
+        "y": 639,
+        "width": 47,
+        "height": 48
+      },
+      "offset": {
+        "x": 280,
+        "y": 639
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 562,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "15_house_06_main.png",
+      "description": "Large central gabled house, chimney and five lit windows",
+      "z_order": 15,
+      "group": "town",
+      "full_path": "full/15_house_06_main.png",
+      "trimmed_path": "trimmed/15_house_06_main.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 385,
+        "y": 459,
+        "width": 126,
+        "height": 253
+      },
+      "offset": {
+        "x": 385,
+        "y": 459
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 14996,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "16_house_07_right_small.png",
+      "description": "Tiny right house with chimney and square window",
+      "z_order": 16,
+      "group": "town",
+      "full_path": "full/16_house_07_right_small.png",
+      "trimmed_path": "trimmed/16_house_07_right_small.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 494,
+        "y": 602,
+        "width": 51,
+        "height": 105
+      },
+      "offset": {
+        "x": 494,
+        "y": 602
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 1664,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "17_house_08_right_tall.png",
+      "description": "Right tall tapered tower with arched window",
+      "z_order": 17,
+      "group": "town",
+      "full_path": "full/17_house_08_right_tall.png",
+      "trimmed_path": "trimmed/17_house_08_right_tall.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 525,
+        "y": 474,
+        "width": 91,
+        "height": 229
+      },
+      "offset": {
+        "x": 525,
+        "y": 474
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 8786,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "18_grove_backing.png",
+      "description": "Warm paper lining filling the entire grove aperture",
+      "z_order": 18,
+      "group": "grove",
+      "full_path": "full/18_grove_backing.png",
+      "trimmed_path": "trimmed/18_grove_backing.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 40,
+        "y": 712,
+        "width": 649,
+        "height": 553
+      },
+      "offset": {
+        "x": 40,
+        "y": 712
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 39533,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "19_trees_back.png",
+      "description": "Rear teal trunks and fine branch silhouettes",
+      "z_order": 19,
+      "group": "grove",
+      "full_path": "full/19_trees_back.png",
+      "trimmed_path": "trimmed/19_trees_back.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 41,
+        "y": 724,
+        "width": 654,
+        "height": 400
+      },
+      "offset": {
+        "x": 41,
+        "y": 724
+      },
+      "reconstruction": "Fine branches color-segmented from the source. Occluded branch stubs extended locally.",
+      "visible_source_pixels": 13768,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "20_trees_middle.png",
+      "description": "Middle blue-gray forest layer",
+      "z_order": 20,
+      "group": "grove",
+      "full_path": "full/20_trees_middle.png",
+      "trimmed_path": "trimmed/20_trees_middle.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 39,
+        "y": 721,
+        "width": 659,
+        "height": 402
+      },
+      "offset": {
+        "x": 39,
+        "y": 721
+      },
+      "reconstruction": "Fine branches color-segmented from the source. Occluded branch stubs extended locally.",
+      "visible_source_pixels": 9777,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "21_grove_ground_back.png",
+      "description": "Blue-gray rear rolling forest floor",
+      "z_order": 21,
+      "group": "grove",
+      "full_path": "full/21_grove_ground_back.png",
+      "trimmed_path": "trimmed/21_grove_ground_back.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 44,
+        "y": 980,
+        "width": 651,
+        "height": 189
+      },
+      "offset": {
+        "x": 44,
+        "y": 980
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 8935,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "22_trees_front.png",
+      "description": "Front purple trunks and branching paper silhouettes",
+      "z_order": 22,
+      "group": "grove",
+      "full_path": "full/22_trees_front.png",
+      "trimmed_path": "trimmed/22_trees_front.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 37,
+        "y": 715,
+        "width": 663,
+        "height": 409
+      },
+      "offset": {
+        "x": 37,
+        "y": 715
+      },
+      "reconstruction": "Visible forks retained from source; hidden trunk portions continued beneath doors and floor.",
+      "visible_source_pixels": 50006,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "23_door_tree_with_frame.png",
+      "description": "Left dark green arched door with wooden paper frame",
+      "z_order": 23,
+      "group": "doors",
+      "full_path": "full/23_door_tree_with_frame.png",
+      "trimmed_path": "trimmed/23_door_tree_with_frame.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 174,
+        "y": 924,
+        "width": 88,
+        "height": 156
+      },
+      "offset": {
+        "x": 174,
+        "y": 924
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 2803,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "24_door_pumpkin_with_frame.png",
+      "description": "Central amber wooden arched door and frame",
+      "z_order": 24,
+      "group": "doors",
+      "full_path": "full/24_door_pumpkin_with_frame.png",
+      "trimmed_path": "trimmed/24_door_pumpkin_with_frame.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 326,
+        "y": 897,
+        "width": 90,
+        "height": 183
+      },
+      "offset": {
+        "x": 326,
+        "y": 897
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 4735,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "25_door_turkey_with_frame.png",
+      "description": "Right green arched door with dark frame",
+      "z_order": 25,
+      "group": "doors",
+      "full_path": "full/25_door_turkey_with_frame.png",
+      "trimmed_path": "trimmed/25_door_turkey_with_frame.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 481,
+        "y": 923,
+        "width": 89,
+        "height": 159
+      },
+      "offset": {
+        "x": 481,
+        "y": 923
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 3455,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "26_grove_ground_middle.png",
+      "description": "Upper lilac floor band beneath the doors",
+      "z_order": 26,
+      "group": "ground",
+      "full_path": "full/26_grove_ground_middle.png",
+      "trimmed_path": "trimmed/26_grove_ground_middle.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 46,
+        "y": 1028,
+        "width": 644,
+        "height": 139
+      },
+      "offset": {
+        "x": 46,
+        "y": 1028
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 13264,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "27_grove_ground_front.png",
+      "description": "Near dark-purple undulating ground band",
+      "z_order": 27,
+      "group": "ground",
+      "full_path": "full/27_grove_ground_front.png",
+      "trimmed_path": "trimmed/27_grove_ground_front.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 46,
+        "y": 1046,
+        "width": 640,
+        "height": 230
+      },
+      "offset": {
+        "x": 46,
+        "y": 1046
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 22589,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "28_tree_character.png",
+      "description": "Decorated Christmas tree, star, ornaments and trunk",
+      "z_order": 28,
+      "group": "characters",
+      "full_path": "full/28_tree_character.png",
+      "trimmed_path": "trimmed/28_tree_character.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 169,
+        "y": 926,
+        "width": 100,
+        "height": 156
+      },
+      "offset": {
+        "x": 169,
+        "y": 926
+      },
+      "reconstruction": "Tree silhouette and visible detail preserved. No large covered region.",
+      "visible_source_pixels": 6358,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "29_pumpkin_character.png",
+      "description": "Orange smiling pumpkin with green curling stem",
+      "z_order": 29,
+      "group": "characters",
+      "full_path": "full/29_pumpkin_character.png",
+      "trimmed_path": "trimmed/29_pumpkin_character.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 312,
+        "y": 948,
+        "width": 113,
+        "height": 112
+      },
+      "offset": {
+        "x": 312,
+        "y": 948
+      },
+      "reconstruction": "Pumpkin visible silhouette retained, including stem.",
+      "visible_source_pixels": 6940,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "30_turkey_character.png",
+      "description": "Turkey with layered feathers, head, body and feet",
+      "z_order": 30,
+      "group": "characters",
+      "full_path": "full/30_turkey_character.png",
+      "trimmed_path": "trimmed/30_turkey_character.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 470,
+        "y": 961,
+        "width": 107,
+        "height": 119
+      },
+      "offset": {
+        "x": 470,
+        "y": 961
+      },
+      "reconstruction": "Feathers, face and feet kept as one animatable figure.",
+      "visible_source_pixels": 6657,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "31_path.png",
+      "description": "Continuous pale winding path from pumpkin door to foreground",
+      "z_order": 31,
+      "group": "ground",
+      "full_path": "full/31_path.png",
+      "trimmed_path": "trimmed/31_path.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 238,
+        "y": 1051,
+        "width": 270,
+        "height": 214
+      },
+      "offset": {
+        "x": 238,
+        "y": 1051
+      },
+      "reconstruction": "Path hidden under shrubs continued smoothly.",
+      "visible_source_pixels": 22243,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "32_bush_left.png",
+      "description": "Left teal foreground paper shrub band",
+      "z_order": 32,
+      "group": "foreground",
+      "full_path": "full/32_bush_left.png",
+      "trimmed_path": "trimmed/32_bush_left.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 62,
+        "y": 1040,
+        "width": 295,
+        "height": 174
+      },
+      "offset": {
+        "x": 62,
+        "y": 1040
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 9901,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "33_bush_right.png",
+      "description": "Right teal foreground paper shrub band",
+      "z_order": 33,
+      "group": "foreground",
+      "full_path": "full/33_bush_right.png",
+      "trimmed_path": "trimmed/33_bush_right.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 434,
+        "y": 1044,
+        "width": 250,
+        "height": 170
+      },
+      "offset": {
+        "x": 434,
+        "y": 1044
+      },
+      "reconstruction": "Paper texture continuation behind occluders; inferred from flattened source.",
+      "visible_source_pixels": 10082,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "34_grove_oval_frame.png",
+      "description": "Continuous dark aubergine outer paper frame around grove opening",
+      "z_order": 34,
+      "group": "foreground",
+      "full_path": "full/34_grove_oval_frame.png",
+      "trimmed_path": "trimmed/34_grove_oval_frame.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 0,
+        "y": 585,
+        "width": 720,
+        "height": 695
+      },
+      "offset": {
+        "x": 0,
+        "y": 585
+      },
+      "reconstruction": "Frame cutout reconstructed as one continuous aperture; town-facing and bottom edges retained.",
+      "visible_source_pixels": 199854,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "35_branch_left.png",
+      "description": "Dark left overhanging branch inside grove opening",
+      "z_order": 35,
+      "group": "foreground",
+      "full_path": "full/35_branch_left.png",
+      "trimmed_path": "trimmed/35_branch_left.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 44,
+        "y": 734,
+        "width": 355,
+        "height": 212
+      },
+      "offset": {
+        "x": 44,
+        "y": 734
+      },
+      "reconstruction": "Fine dark branch silhouette from source; local hidden joins extended.",
+      "visible_source_pixels": 10173,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    },
+    {
+      "filename": "36_branch_right.png",
+      "description": "Dark right overhanging branch inside grove opening",
+      "z_order": 36,
+      "group": "foreground",
+      "full_path": "full/36_branch_right.png",
+      "trimmed_path": "trimmed/36_branch_right.png",
+      "canvas": {
+        "width": 720,
+        "height": 1280
+      },
+      "bounding_box": {
+        "x": 357,
+        "y": 734,
+        "width": 336,
+        "height": 212
+      },
+      "offset": {
+        "x": 357,
+        "y": 734
+      },
+      "reconstruction": "Fine dark branch silhouette from source; local hidden joins extended.",
+      "visible_source_pixels": 12620,
+      "shadow": "Attached reconstructed soft alpha shadow; visible baked shading retained."
+    }
+  ]
+}

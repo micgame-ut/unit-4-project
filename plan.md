@@ -1,0 +1,62 @@
+# Implementation Plan
+
+> EDITING DIRECTIVE: DEVELOPER AND AGENT EDIT THIS FILE COLLABORATIVELY. THE DEVELOPER MUST REVIEW AND APPROVE ITS CONTENT.
+
+Purpose: Track the next useful build checkpoints, verification, and consequential revisions.
+
+## Working agreement
+
+Developer: Keep the browser preview running, choose priorities, test results directly, and plan only the next few checkpoints.
+
+Agent: Read the project documents and inspect the files. Keep each checkpoint small enough to run and judge. Do not expand scope or mark Developer verification complete.
+
+Start or continue a fresh chat with:
+
+`Read the project documents, inspect the current build, and help me complete the next unchecked checkpoint.`
+
+## Checkpoints
+
+Create your own checklist for the next few results, using the workflow in `brief.md` and the current `spec.md`. Name the main risk, what each checkpoint should produce, and how you will verify it. Review and approve the approach before implementation.
+
+Test each result before continuing, including related behavior that already works. Update priorities as evidence emerges and preserve meaningful working checkpoints in git. Before delivery, verify the deployed app against the brief and specification.
+
+### Approved Phase 1 checkpoints
+
+1. **Static composition and Enter screen — complete** — Implemented the original hill/town/holiday-door-woods composition and Enter screen. Browser preview verified at 320×568 and 390×844: all three zones and doors remain visible without page overflow; the Enter button works with touch and keyboard. A first preview showed the town obscured, so zone boundaries were adjusted and checked again. These are browser viewport checks, not physical-phone tests.
+1b. **Layered art rebuild — approved** — Replace the CSS-drawn scene with the 36 extracted layers so it matches `stack_preview.jpg`. Static only: no animation, sound, or interaction yet.
+   - *Structure:* a fixed 720×1280 `.stage` holding one absolutely positioned `<img>` per trimmed layer (position and size from `manifest.json`, stacked in file order). The stage scales uniformly to the viewport with one CSS transform, so every layer keeps its alignment at any size. Static markup is generated once from the manifest so later checkpoints can target named layers (moon, houses, doors, characters) directly.
+   - *Remove:* the old CSS-drawn hill, town, woods, doors, stars, and their styles. Keep the Enter screen and `app.js` behavior.
+   - *Main risk:* phones are taller than 9:16. The stage either letterboxes (bands above and below) or crops the sides; this fit rule is the Developer's choice.
+   - *Verify:* screenshots at 390×844 and 320×568 compared side by side with `stack_preview.jpg`; no console 404s; Enter still works by touch and keyboard; total shipped image size recorded.
+   - *Developer choice:* plain dark letterbox bands (option 3).
+   - *Agent evidence (2026-10-19, desktop Chrome, not a phone):* all 36 layers load with natural sizes matching the manifest. At 390×844 the stage scales to 0.542 (390×693) with 75px bands above and below; at 320×568 it fills exactly (scale 0.444, no bands). No page overflow. The render visually matches `stack_preview.jpg`. Keyboard Enter on the focused button opens the scene. The only server 404 is `favicon.ico`. Shipped images are `trimmed/`, 3.7 MB total. The previous CSS scene is preserved in `archive/css-scene/`.
+   - *Developer review (2026-10-19, integrated browser, not a phone):* compared the rendered scene with `stack_preview.jpg`; all 36 layers loaded at both 390×844 and 320×568, and keyboard Enter opened the scene. Developer approved the rebuild. The spiral-hill originality concern remains provisional for reconsideration before delivery.
+2. **Start, ambience, and shared controls — approved** — Add the reduced-motion-aware start flow, looping ambience, three ambient effects, and a Play/Pause control that pauses and resumes the whole experience. Verify each behavior independently and together.
+   - *Agent evidence (2026-10-19, integrated browser over local HTTP, not a phone):* at 390×844, all 36 image layers load, the scene scales to 390×693 with centered bands, and there is no page overflow. At 320×568 the stage fills the viewport with no overflow. Reduced-motion emulation shows its notice before Enter and disables effect animations; normal motion starts the ambient track and all three CSS effects. Keyboard Enter starts the scene, and keyboard Play/Pause stops and resumes the audio and effects together. The 50.626-second track loops; pausing holds its playback position. A simulated audio load failure showed a live error, then Play retried successfully. The Play/Pause target measured 74×48px. `file://` did not play local audio in the integrated browser; verification succeeded over a temporary local HTTP server. No physical-phone or deployment checks have been performed.
+   - *Developer review (2026-10-19):* approved after reviewing the browser-verification summary. Physical-phone testing remains open.
+3. **First story — revised implementation and browser checks complete; Developer review pending** — The Developer approved one centered evergreen door for the full scene, retiring the pumpkin/turkey door and character layers, and separating the tree lift from the door opening. The seven-second sequence and current composition are recorded in `spec.md`.
+   - *Agent evidence (2026-10-19, desktop integrated browser over temporary local HTTP, not a phone):* the revised scene displays one centered evergreen door; the two other door layers and two character layers are absent, and a local SVG mask removes the two unused arch frames embedded in the generated foreground-tree layer. At 390×844, all 32 active image layers loaded, there was no page overflow, and the centered hit target measured 48×48 CSS pixels. At about 1.8 seconds, the tree was fully above the still-closed door (tree bounding-box bottom 568px, door top 576px); at about 3.3 seconds, the tree remained raised while the door was open and warm glow was active. Pause froze the animation and ambient audio; resume completed the remaining story time, with about 7 seconds of running time overall. The story then closed the door, landed the tree, reset the glimmers, enabled replay, and returned a clear exploration message. Reduced-motion emulation at 320×568 showed the start notice, disabled ambient/story animations, kept the static raised-tree/open-door story state, retained a 48×48px target, loaded all active layers, and had no page overflow. Keyboard focus transfer, progressive hints, replay, and keyboard stepping were verified in browser checks; hint timers were accelerated only for that test, while production intervals remain 18 and 24 seconds. These are desktop browser checks, not physical-phone or deployment checks.
+   - *Developer review:* pending.
+4. **Phase 1 verification and sharing — temporary HTTPS preview live; final verification pending** — The site is deployed to GitHub Pages for review. Still conduct an unassisted peer test on a physical smartphone, record observations and consequential revisions, and recheck the final shared URL on a physical smartphone after art revisions.
+   - *Agent evidence (2026-10-19):* created public repository `micgame-ut/unit-4-project`, enabled Pages from `main:/`, and verified `https://micgame-ut.github.io/unit-4-project/` returns the app. The deployed page loads all 32 active layers and the SVG mask; CSS, JavaScript, audio, mask, and door asset URLs return HTTP 200. Browser testing at 390×844 confirmed the deployed Enter flow, audio start, and first story lift with the door still closed. This is a temporary desktop-browser preview; no physical-phone or peer-playtest evidence exists, and the current forest artwork is still under revision.
+
+The two remaining stories need new triggers because the pumpkin/turkey motifs are retired; final polish and debrief are Phase 2 work.
+
+### Gothic redo checkpoints (approved 2026-10-19; see `spec.md` "gothic stop-motion redo")
+
+The papercraft scene, its ambient effects, and the first story (checkpoints 1b–3) are superseded by the new art and preserved in `archive/papercraft-scene/` and git commit `32c1770`. Their Enter/audio/Play-Pause behavior carries over; effects and story are rebuilt on the new layers. The GitHub Pages preview still serves the old build until the next push.
+
+R1. **Static gothic rebuild — built, awaiting Developer review** — 24 layers from `assets/layers/gothic_assets/gothic_parallax/manifest.json` on a fixed 941×1672 stage, scaled uniformly with dark letterbox bands. Enter screen, ambience, Play/Pause, status line, and reduced-motion notice kept; old effects and story removed until R2/R3.
+   - *Agent evidence (2026-10-19, desktop Chrome over temporary local HTTP, not a phone):* at 390×844 the stage scales to 0.414 (390×693) with 76px bands; at 320×568 it fills the viewport (scale 0.340). All 24 layers load at their manifest sizes at both sizes; no page overflow. The render visually matches `catalog/stack_preview.png`. A real click on Enter shows the scene and starts the ambience; keyboard Tab→Enter opens the scene and moves focus to Pause, Enter pauses the audio, Enter resumes it. The only server 404 is `favicon.ico`. Shipped images: `trimmed/`, 3.47 MB.
+R2. **Ambient set on the new art** — fog, moon glow, window and lantern flicker, shutters, branch sway, wind and clock-chime sound; all tied to Play/Pause and reduced motion.
+R3. **Story 1: the Christmas-tree door** — four taps light ornament rows bottom-up, star finale, door opens to the snowy world, snow gust covers the scene, reset and replay.
+
+## Evidence and revisions
+
+Record non-identifying playtest observations, separating what Users did or said from your interpretation. Use the findings to choose revision priorities and record what changed and how you verified the improvement.
+
+Keep implementation progress and verification here. Update `research.md` when evidence changes a decision and `spec.md` when intended behavior changes; link to those updates rather than duplicating them. Record consequential changes, not every small adjustment.
+
+## Saving transcripts
+
+When directed, save the complete conversation as `transcripts/plan-YYYY-MM-DD_HHMMSS.md` or `transcripts/build-YYYY-MM-DD_HHMMSS.md`, label messages `Developer` and `Agent`, and confirm the path.

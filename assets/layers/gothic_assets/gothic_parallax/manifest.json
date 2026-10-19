@@ -1,0 +1,406 @@
+{
+  "version": 1,
+  "canvas": {
+    "width": 941,
+    "height": 1672,
+    "colorSpace": "sRGB",
+    "alpha": "straight / unpremultiplied"
+  },
+  "coordinateSystem": "top-left origin, +x right, +y down, full-canvas pixels",
+  "stacking": "ascending stackingOrder, back to front",
+  "fullSet": "Lossless full-canvas RGBA master PNGs",
+  "trimmedSet": "Web PNGs with per-object RGBA palettes and transparent antialiased edges; decode to RGBA in browsers",
+  "webTotalBytes": 3473002,
+  "layers": [
+    {
+      "id": 1,
+      "name": "sky_stars",
+      "file": "full/01_sky_stars.png",
+      "trimmedFile": "trimmed/01_sky_stars.png",
+      "stackingOrder": 1,
+      "trimmed": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "webBytes": 1225023,
+      "reconstructedHiddenAreas": true,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 2,
+      "name": "moon",
+      "file": "full/02_moon.png",
+      "trimmedFile": "trimmed/02_moon.png",
+      "stackingOrder": 2,
+      "trimmed": {
+        "x": 110,
+        "y": 47,
+        "width": 335,
+        "height": 335
+      },
+      "webBytes": 69908,
+      "reconstructedHiddenAreas": true,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 3,
+      "name": "spiral_hill_body_trees_fence",
+      "file": "full/03_spiral_hill_body_trees_fence.png",
+      "trimmedFile": "trimmed/03_spiral_hill_body_trees_fence.png",
+      "stackingOrder": 3,
+      "trimmed": {
+        "x": 0,
+        "y": 156,
+        "width": 941,
+        "height": 418
+      },
+      "webBytes": 187914,
+      "reconstructedHiddenAreas": true,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 4,
+      "name": "spiral_tip",
+      "file": "full/04_spiral_tip.png",
+      "trimmedFile": "trimmed/04_spiral_tip.png",
+      "stackingOrder": 4,
+      "trimmed": {
+        "x": 534,
+        "y": 152,
+        "width": 179,
+        "height": 173
+      },
+      "webBytes": 15128,
+      "reconstructedHiddenAreas": false,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 5,
+      "name": "town_back_buildings",
+      "file": "full/05_town_back_buildings.png",
+      "trimmedFile": "trimmed/05_town_back_buildings.png",
+      "stackingOrder": 5,
+      "trimmed": {
+        "x": 0,
+        "y": 303,
+        "width": 941,
+        "height": 366
+      },
+      "webBytes": 186349,
+      "reconstructedHiddenAreas": true,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 6,
+      "name": "clock_tower_body",
+      "file": "full/06_clock_tower_body.png",
+      "trimmedFile": "trimmed/06_clock_tower_body.png",
+      "stackingOrder": 6,
+      "trimmed": {
+        "x": 500,
+        "y": 316,
+        "width": 108,
+        "height": 289
+      },
+      "webBytes": 14045,
+      "reconstructedHiddenAreas": true,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 7,
+      "name": "clock_face_hands",
+      "file": "full/07_clock_face_hands.png",
+      "trimmedFile": "trimmed/07_clock_face_hands.png",
+      "stackingOrder": 7,
+      "trimmed": {
+        "x": 541,
+        "y": 432,
+        "width": 32,
+        "height": 36
+      },
+      "webBytes": 2048,
+      "reconstructedHiddenAreas": false,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 8,
+      "name": "town_left_front_buildings",
+      "file": "full/08_town_left_front_buildings.png",
+      "trimmedFile": "trimmed/08_town_left_front_buildings.png",
+      "stackingOrder": 8,
+      "trimmed": {
+        "x": 36,
+        "y": 342,
+        "width": 363,
+        "height": 325
+      },
+      "webBytes": 63771,
+      "reconstructedHiddenAreas": true,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 9,
+      "name": "biggest_house_purple_roof",
+      "file": "full/09_biggest_house_purple_roof.png",
+      "trimmedFile": "trimmed/09_biggest_house_purple_roof.png",
+      "stackingOrder": 9,
+      "trimmed": {
+        "x": 626,
+        "y": 429,
+        "width": 312,
+        "height": 284
+      },
+      "webBytes": 41332,
+      "reconstructedHiddenAreas": true,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 10,
+      "name": "biggest_house_open_shutters",
+      "file": "full/10_biggest_house_open_shutters.png",
+      "trimmedFile": "trimmed/10_biggest_house_open_shutters.png",
+      "stackingOrder": 10,
+      "trimmed": {
+        "x": 708,
+        "y": 573,
+        "width": 106,
+        "height": 86
+      },
+      "webBytes": 5316,
+      "reconstructedHiddenAreas": false,
+      "source": "generated insert"
+    },
+    {
+      "id": 11,
+      "name": "town_wall_fences_stairs_path_jackolanterns",
+      "file": "full/11_town_wall_fences_stairs_path_jackolanterns.png",
+      "trimmedFile": "trimmed/11_town_wall_fences_stairs_path_jackolanterns.png",
+      "stackingOrder": 11,
+      "trimmed": {
+        "x": 0,
+        "y": 494,
+        "width": 941,
+        "height": 314
+      },
+      "webBytes": 158270,
+      "reconstructedHiddenAreas": true,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 12,
+      "name": "dark_background_forest",
+      "file": "full/12_dark_background_forest.png",
+      "trimmedFile": "trimmed/12_dark_background_forest.png",
+      "stackingOrder": 12,
+      "trimmed": {
+        "x": 0,
+        "y": 575,
+        "width": 941,
+        "height": 1097
+      },
+      "webBytes": 558867,
+      "reconstructedHiddenAreas": true,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 13,
+      "name": "big_door_tree_trunk_arched_frame",
+      "file": "full/13_big_door_tree_trunk_arched_frame.png",
+      "trimmedFile": "trimmed/13_big_door_tree_trunk_arched_frame.png",
+      "stackingOrder": 13,
+      "trimmed": {
+        "x": 19,
+        "y": 682,
+        "width": 887,
+        "height": 640
+      },
+      "webBytes": 204781,
+      "reconstructedHiddenAreas": true,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 14,
+      "name": "door_interior_snowy_christmas",
+      "file": "full/14_door_interior_snowy_christmas.png",
+      "trimmedFile": "trimmed/14_door_interior_snowy_christmas.png",
+      "stackingOrder": 14,
+      "trimmed": {
+        "x": 401,
+        "y": 927,
+        "width": 203,
+        "height": 318
+      },
+      "webBytes": 42732,
+      "reconstructedHiddenAreas": false,
+      "source": "generated insert"
+    },
+    {
+      "id": 15,
+      "name": "green_christmas_door_panel",
+      "file": "full/15_green_christmas_door_panel.png",
+      "trimmedFile": "trimmed/15_green_christmas_door_panel.png",
+      "stackingOrder": 15,
+      "trimmed": {
+        "x": 399,
+        "y": 924,
+        "width": 207,
+        "height": 323
+      },
+      "webBytes": 39479,
+      "reconstructedHiddenAreas": false,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 16,
+      "name": "front_steps_two_lanterns",
+      "file": "full/16_front_steps_two_lanterns.png",
+      "trimmedFile": "trimmed/16_front_steps_two_lanterns.png",
+      "stackingOrder": 16,
+      "trimmed": {
+        "x": 343,
+        "y": 1174,
+        "width": 334,
+        "height": 169
+      },
+      "webBytes": 25074,
+      "reconstructedHiddenAreas": true,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 17,
+      "name": "left_bushes_pumpkin",
+      "file": "full/17_left_bushes_pumpkin.png",
+      "trimmedFile": "trimmed/17_left_bushes_pumpkin.png",
+      "stackingOrder": 17,
+      "trimmed": {
+        "x": 0,
+        "y": 1125,
+        "width": 433,
+        "height": 488
+      },
+      "webBytes": 92861,
+      "reconstructedHiddenAreas": true,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 18,
+      "name": "right_bushes_pumpkin",
+      "file": "full/18_right_bushes_pumpkin.png",
+      "trimmedFile": "trimmed/18_right_bushes_pumpkin.png",
+      "stackingOrder": 18,
+      "trimmed": {
+        "x": 510,
+        "y": 1187,
+        "width": 431,
+        "height": 434
+      },
+      "webBytes": 85653,
+      "reconstructedHiddenAreas": true,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 19,
+      "name": "stone_path",
+      "file": "full/19_stone_path.png",
+      "trimmedFile": "trimmed/19_stone_path.png",
+      "stackingOrder": 19,
+      "trimmed": {
+        "x": 147,
+        "y": 1311,
+        "width": 787,
+        "height": 361
+      },
+      "webBytes": 103074,
+      "reconstructedHiddenAreas": true,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 20,
+      "name": "left_foreground_trunk",
+      "file": "full/20_left_foreground_trunk.png",
+      "trimmedFile": "trimmed/20_left_foreground_trunk.png",
+      "stackingOrder": 20,
+      "trimmed": {
+        "x": 0,
+        "y": 0,
+        "width": 355,
+        "height": 1672
+      },
+      "webBytes": 131228,
+      "reconstructedHiddenAreas": true,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 21,
+      "name": "left_foreground_upper_branches",
+      "file": "full/21_left_foreground_upper_branches.png",
+      "trimmedFile": "trimmed/21_left_foreground_upper_branches.png",
+      "stackingOrder": 21,
+      "trimmed": {
+        "x": 0,
+        "y": 0,
+        "width": 475,
+        "height": 338
+      },
+      "webBytes": 39440,
+      "reconstructedHiddenAreas": true,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 22,
+      "name": "right_foreground_trunk",
+      "file": "full/22_right_foreground_trunk.png",
+      "trimmedFile": "trimmed/22_right_foreground_trunk.png",
+      "stackingOrder": 22,
+      "trimmed": {
+        "x": 651,
+        "y": 0,
+        "width": 290,
+        "height": 1672
+      },
+      "webBytes": 107712,
+      "reconstructedHiddenAreas": true,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 23,
+      "name": "right_foreground_upper_branches",
+      "file": "full/23_right_foreground_upper_branches.png",
+      "trimmedFile": "trimmed/23_right_foreground_upper_branches.png",
+      "stackingOrder": 23,
+      "trimmed": {
+        "x": 499,
+        "y": 0,
+        "width": 442,
+        "height": 207
+      },
+      "webBytes": 26886,
+      "reconstructedHiddenAreas": true,
+      "source": "original pixels with hidden-area reconstruction"
+    },
+    {
+      "id": 24,
+      "name": "foreground_bottom_leaves",
+      "file": "full/24_foreground_bottom_leaves.png",
+      "trimmedFile": "trimmed/24_foreground_bottom_leaves.png",
+      "stackingOrder": 24,
+      "trimmed": {
+        "x": 0,
+        "y": 1404,
+        "width": 941,
+        "height": 268
+      },
+      "webBytes": 46111,
+      "reconstructedHiddenAreas": true,
+      "source": "original pixels with hidden-area reconstruction"
+    }
+  ],
+  "notes": [
+    "Layer 14 sits behind layer 15. Hide or rotate layer 15 to reveal the Christmas interior.",
+    "Both open shutters share layer 10. Hinge coordinates and individual bounds are supplied in hotspots.json.",
+    "Hidden content is a plausible reconstruction. Small parallax and gentle sway are intended; extreme movement reveals reconstructed areas.",
+    "The original composition is retained with a reconstructed clean starfield and added shutters; the snowy interior is covered by the closed original door."
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "canvas": {
+    "width": 941,
+    "height": 1672
+  },
+  "coordinateSystem": "top-left origin, +x right, +y down, full-canvas pixels",
+  "ornaments": {
+    "row1": [
+      {
+        "x": 462,
+        "y": 1178,
+        "radius": 10,
+        "id": "lower_left_red"
+      },
+      {
+        "x": 532,
+        "y": 1195,
+        "radius": 8,
+        "id": "lower_middle_orange"
+      },
+      {
+        "x": 547,
+        "y": 1177,
+        "radius": 9,
+        "id": "lower_right_teal"
+      }
+    ],
+    "row2": [
+      {
+        "x": 472,
+        "y": 1126,
+        "radius": 9,
+        "id": "middle_left_red"
+      },
+      {
+        "x": 531,
+        "y": 1126,
+        "radius": 9,
+        "id": "middle_right_red"
+      }
+    ],
+    "row3": [
+      {
+        "x": 480,
+        "y": 1080,
+        "radius": 8,
+        "id": "upper_middle_left_red"
+      },
+      {
+        "x": 529,
+        "y": 1078,
+        "radius": 8,
+        "id": "upper_middle_right_red"
+      }
+    ],
+    "row4": [
+      {
+        "x": 482,
+        "y": 1039,
+        "radius": 7,
+        "id": "upper_left_red"
+      },
+      {
+        "x": 525,
+        "y": 1035,
+        "radius": 7,
+        "id": "upper_right_red"
+      }
+    ]
+  },
+  "star": {
+    "x": 505,
+    "y": 984,
+    "radius": 29
+  },
+  "door": {
+    "layer": 15,
+    "x": 399,
+    "y": 924,
+    "width": 207,
+    "height": 323,
+    "hingeSide": "left",
+    "hingeEdge": {
+      "from": {
+        "x": 400,
+        "y": 1050
+      },
+      "to": {
+        "x": 400,
+        "y": 1245
+      }
+    },
+    "pivot": {
+      "x": 400,
+      "y": 1085
+    }
+  },
+  "moon": {
+    "x": 277,
+    "y": 214,
+    "radius": 164
+  },
+  "clockFace": {
+    "x": 556,
+    "y": 449,
+    "radius": 14,
+    "handsPivot": {
+      "x": 556,
+      "y": 449
+    },
+    "layer": 7
+  },
+  "branchPivots": {
+    "left": {
+      "layer": 21,
+      "x": 34,
+      "y": 226
+    },
+    "right": {
+      "layer": 23,
+      "x": 901,
+      "y": 134
+    }
+  },
+  "spiralTipPivot": {
+    "layer": 4,
+    "x": 560,
+    "y": 211
+  },
+  "shutterHinges": {
+    "left": {
+      "layer": 10,
+      "hingeSide": "right",
+      "edge": {
+        "from": {
+          "x": 735,
+          "y": 581
+        },
+        "to": {
+          "x": 736,
+          "y": 654
+        }
+      },
+      "bounds": {
+        "x": 710,
+        "y": 574,
+        "width": 27,
+        "height": 82
+      }
+    },
+    "right": {
+      "layer": 10,
+      "hingeSide": "left",
+      "edge": {
+        "from": {
+          "x": 783,
+          "y": 581
+        },
+        "to": {
+          "x": 783,
+          "y": 656
+        }
+      },
+      "bounds": {
+        "x": 782,
+        "y": 574,
+        "width": 30,
+        "height": 84
+      }
+    }
+  },
+  "lanterns": [
+    {
+      "x": 365,
+      "y": 1214,
+      "radius": 15,
+      "id": "door_left"
+    },
+    {
+      "x": 637,
+      "y": 1215,
+      "radius": 15,
+      "id": "door_right"
+    }
+  ],
+  "windows": [
+    {
+      "x": 77,
+      "y": 494,
+      "radius": 8,
+      "id": "window_01"
+    },
+    {
+      "x": 133,
+      "y": 505,
+      "radius": 12,
+      "id": "window_02"
+    },
+    {
+      "x": 173,
+      "y": 553,
+      "radius": 8,
+      "id": "window_03"
+    },
+    {
+      "x": 231,
+      "y": 493,
+      "radius": 17,
+      "id": "window_04"
+    },
+    {
+      "x": 231,
+      "y": 575,
+      "radius": 20,
+      "id": "window_05"
+    },
+    {
+      "x": 319,
+      "y": 503,
+      "radius": 10,
+      "id": "window_06"
+    },
+    {
+      "x": 319,
+      "y": 572,
+      "radius": 15,
+      "id": "window_07"
+    },
+    {
+      "x": 426,
+      "y": 486,
+      "radius": 11,
+      "id": "window_08"
+    },
+    {
+      "x": 507,
+      "y": 519,
+      "radius": 6,
+      "id": "window_09"
+    },
+    {
+      "x": 510,
+      "y": 555,
+      "radius": 11,
+      "id": "window_10"
+    },
+    {
+      "x": 556,
+      "y": 491,
+      "radius": 5,
+      "id": "window_11"
+    },
+    {
+      "x": 558,
+      "y": 521,
+      "radius": 5,
+      "id": "window_12"
+    },
+    {
+      "x": 558,
+      "y": 558,
+      "radius": 9,
+      "id": "window_13"
+    },
+    {
+      "x": 596,
+      "y": 563,
+      "radius": 5,
+      "id": "window_14"
+    },
+    {
+      "x": 622,
+      "y": 521,
+      "radius": 10,
+      "id": "window_15"
+    },
+    {
+      "x": 621,
+      "y": 490,
+      "radius": 5,
+      "id": "window_16"
+    },
+    {
+      "x": 683,
+      "y": 611,
+      "radius": 10,
+      "id": "window_17"
+    },
+    {
+      "x": 759,
+      "y": 544,
+      "radius": 11,
+      "id": "window_18"
+    },
+    {
+      "x": 760,
+      "y": 620,
+      "radius": 20,
+      "id": "window_19"
+    },
+    {
+      "x": 829,
+      "y": 617,
+      "radius": 13,
+      "id": "window_20"
+    },
+    {
+      "x": 860,
+      "y": 618,
+      "radius": 7,
+      "id": "window_21"
+    },
+    {
+      "x": 834,
+      "y": 466,
+      "radius": 17,
+      "id": "window_22"
+    }
+  ],
+  "jackolanterns": [
+    {
+      "x": 285,
+      "y": 582,
+      "radius": 14,
+      "id": "left_pillar"
+    },
+    {
+      "x": 432,
+      "y": 601,
+      "radius": 12,
+      "id": "middle_pillar"
+    },
+    {
+      "x": 618,
+      "y": 662,
+      "radius": 12,
+      "id": "right_pillar_left"
+    },
+    {
+      "x": 647,
+      "y": 663,
+      "radius": 11,
+      "id": "right_pillar_right"
+    }
+  ]
+}
