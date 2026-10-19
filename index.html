@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#17132d">
+    <title>Moonlit Doorwood</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="experience">
+      <section class="welcome" id="welcome" aria-labelledby="title">
+        <div class="welcome__content">
+          <p class="eyebrow">A seasonal preview</p>
+          <h1 id="title">Moonlit <span>Doorwood</span></h1>
+          <p class="welcome__description">
+            Follow the crooked path from the moonlit hill to a quiet forest
+            where one evergreen door waits.
+          </p>
+          <button class="enter-button" id="enter-button" type="button">
+            Enter the woods
+          </button>
+          <p class="welcome__note">A little curiosity goes a long way.</p>
+          <p class="motion-note" id="motion-note" role="status" aria-live="polite" hidden>
+            Reduced motion is on. The scene effects will stay still.
+          </p>
+        </div>
+      </section>
+
+      <audio
+        id="ambience-audio"
+        src="assets/audio/forest-winter-night.mp3"
+        preload="none"
+        loop
+      ></audio>
+
+      <section
+        class="scene"
+        id="scene"
+        aria-label="Moonlit hill, quiet town, and evergreen-door woods"
+        hidden
+      >
+        <!-- Layers are generated from assets/layers/papercraft_assets/manifest.json,
+             drawn back to front. Positions are in 720x1280 art pixels. -->
+        <div
+          class="stage"
+          id="stage"
+          role="group"
+          aria-label="A papercraft night scene: a large moon behind a spiral hill, a crooked town with glowing windows, and a grove centered on one evergreen door."
+        >
+          <img class="layer layer--sky" src="assets/layers/papercraft_assets/trimmed/01_sky.png" style="left:0px; top:0px; width:720px; height:1280px" alt="">
+          <img class="layer layer--moon-ring-outer" src="assets/layers/papercraft_assets/trimmed/02_moon_ring_outer.png" style="left:53px; top:24px; width:633px; height:602px" alt="">
+          <img class="layer layer--moon-ring-middle" src="assets/layers/papercraft_assets/trimmed/03_moon_ring_middle.png" style="left:102px; top:58px; width:534px; height:522px" alt="">
+          <img class="layer layer--moon-ring-inner" src="assets/layers/papercraft_assets/trimmed/04_moon_ring_inner.png" style="left:139px; top:91px; width:461px; height:462px" alt="">
+          <img class="layer layer--moon" src="assets/layers/papercraft_assets/trimmed/05_moon.png" style="left:170px; top:119px; width:397px; height:409px" alt="">
+          <img class="layer layer--spiral-hill" src="assets/layers/papercraft_assets/trimmed/06_spiral_hill.png" style="left:0px; top:242px; width:720px; height:469px" alt="">
+          <img class="layer layer--town-ground-teal" src="assets/layers/papercraft_assets/trimmed/07_town_ground_teal.png" style="left:0px; top:553px; width:720px; height:196px" alt="">
+          <img class="layer layer--fence-left" src="assets/layers/papercraft_assets/trimmed/08_fence_left.png" style="left:98px; top:538px; width:151px; height:87px" alt="">
+          <img class="layer layer--house-01-left-tall" src="assets/layers/papercraft_assets/trimmed/09_house_01_left_tall.png" style="left:112px; top:416px; width:121px; height:246px" alt="">
+          <img class="layer layer--house-02-left-small" src="assets/layers/papercraft_assets/trimmed/10_house_02_left_small.png" style="left:203px; top:578px; width:56px; height:109px" alt="">
+          <img class="layer layer--house-03-spire" src="assets/layers/papercraft_assets/trimmed/11_house_03_spire.png" style="left:238px; top:510px; width:70px; height:199px" alt="">
+          <img class="layer layer--house-04-small-center" src="assets/layers/papercraft_assets/trimmed/12_house_04_small_center.png" style="left:305px; top:569px; width:60px; height:135px" alt="">
+          <img class="layer layer--house-05-middle-tower" src="assets/layers/papercraft_assets/trimmed/13_house_05_middle_tower.png" style="left:346px; top:523px; width:65px; height:183px" alt="">
+          <img class="layer layer--fence-center" src="assets/layers/papercraft_assets/trimmed/14_fence_center.png" style="left:280px; top:639px; width:47px; height:48px" alt="">
+          <img class="layer layer--house-06-main" src="assets/layers/papercraft_assets/trimmed/15_house_06_main.png" style="left:385px; top:459px; width:126px; height:253px" alt="">
+          <img class="layer layer--house-07-right-small" src="assets/layers/papercraft_assets/trimmed/16_house_07_right_small.png" style="left:494px; top:602px; width:51px; height:105px" alt="">
+          <img class="layer layer--house-08-right-tall" src="assets/layers/papercraft_assets/trimmed/17_house_08_right_tall.png" style="left:525px; top:474px; width:91px; height:229px" alt="">
+          <div class="window-glows" aria-hidden="true">
+            <span style="left: 126px; top: 528px; --glow-delay: 0s"></span>
+            <span style="left: 154px; top: 554px; --glow-delay: 1.2s"></span>
+            <span style="left: 216px; top: 636px; --glow-delay: 2.1s"></span>
+            <span style="left: 259px; top: 617px; --glow-delay: 0.8s"></span>
+            <span style="left: 322px; top: 643px; --glow-delay: 2.7s"></span>
+            <span style="left: 366px; top: 611px; --glow-delay: 1.6s"></span>
+            <span style="left: 401px; top: 552px; --glow-delay: 0.4s"></span>
+            <span style="left: 430px; top: 579px; --glow-delay: 2.4s"></span>
+            <span style="left: 543px; top: 571px; --glow-delay: 1s"></span>
+            <span style="left: 570px; top: 606px; --glow-delay: 3s"></span>
+          </div>
+          <img class="layer layer--grove-backing" src="assets/layers/papercraft_assets/trimmed/18_grove_backing.png" style="left:40px; top:712px; width:649px; height:553px" alt="">
+          <img class="layer layer--trees-back" src="assets/layers/papercraft_assets/trimmed/19_trees_back.png" style="left:41px; top:724px; width:654px; height:400px" alt="">
+          <img class="layer layer--trees-middle" src="assets/layers/papercraft_assets/trimmed/20_trees_middle.png" style="left:39px; top:721px; width:659px; height:402px" alt="">
+          <div class="ambient-effects" aria-hidden="true">
+            <div class="mist"></div>
+            <div class="fireflies">
+              <span style="left: 84px; top: 184px; --drift-x: 10px; --drift-y: -16px; --effect-delay: -2s"></span>
+              <span style="left: 153px; top: 96px; --drift-x: -12px; --drift-y: -12px; --effect-delay: -5s"></span>
+              <span style="left: 218px; top: 226px; --drift-x: 9px; --drift-y: -18px; --effect-delay: -1s"></span>
+              <span style="left: 304px; top: 152px; --drift-x: -10px; --drift-y: -14px; --effect-delay: -4s"></span>
+              <span style="left: 386px; top: 246px; --drift-x: 12px; --drift-y: -16px; --effect-delay: -3s"></span>
+              <span style="left: 451px; top: 116px; --drift-x: -9px; --drift-y: -18px; --effect-delay: -6s"></span>
+              <span style="left: 516px; top: 208px; --drift-x: 11px; --drift-y: -12px; --effect-delay: -2.5s"></span>
+            </div>
+          </div>
+          <img class="layer layer--grove-ground-back" src="assets/layers/papercraft_assets/trimmed/21_grove_ground_back.png" style="left:44px; top:980px; width:651px; height:189px" alt="">
+          <img class="layer layer--trees-front" src="assets/layers/papercraft_assets/trimmed/22_trees_front.png" style="left:37px; top:715px; width:663px; height:409px" alt="">
+          <div class="tree-portal-glow" aria-hidden="true"></div>
+          <img class="layer layer--door-tree-with-frame" src="assets/layers/papercraft_assets/trimmed/23_door_tree_with_frame.png" style="left:316px; top:924px; width:88px; height:156px" alt="">
+          <img class="layer layer--grove-ground-middle" src="assets/layers/papercraft_assets/trimmed/26_grove_ground_middle.png" style="left:46px; top:1028px; width:644px; height:139px" alt="">
+          <img class="layer layer--grove-ground-front" src="assets/layers/papercraft_assets/trimmed/27_grove_ground_front.png" style="left:46px; top:1046px; width:640px; height:230px" alt="">
+          <img class="layer layer--tree-character" src="assets/layers/papercraft_assets/trimmed/28_tree_character.png" style="left:310px; top:926px; width:100px; height:156px" alt="">
+          <div class="tree-glimmers" aria-hidden="true">
+            <span class="tree-glimmer tree-glimmer--bottom"></span>
+            <span class="tree-glimmer tree-glimmer--middle"></span>
+            <span class="tree-glimmer tree-glimmer--top"></span>
+          </div>
+          <img class="layer layer--path" src="assets/layers/papercraft_assets/trimmed/31_path.png" style="left:238px; top:1051px; width:270px; height:214px" alt="">
+          <img class="layer layer--bush-left" src="assets/layers/papercraft_assets/trimmed/32_bush_left.png" style="left:62px; top:1040px; width:295px; height:174px" alt="">
+          <img class="layer layer--bush-right" src="assets/layers/papercraft_assets/trimmed/33_bush_right.png" style="left:434px; top:1044px; width:250px; height:170px" alt="">
+          <img class="layer layer--grove-oval-frame" src="assets/layers/papercraft_assets/trimmed/34_grove_oval_frame.png" style="left:0px; top:585px; width:720px; height:695px" alt="">
+          <img class="layer layer--branch-left" src="assets/layers/papercraft_assets/trimmed/35_branch_left.png" style="left:44px; top:734px; width:355px; height:212px" alt="">
+          <img class="layer layer--branch-right" src="assets/layers/papercraft_assets/trimmed/36_branch_right.png" style="left:357px; top:734px; width:336px; height:212px" alt="">
+          <button
+            class="tree-door-trigger"
+            id="tree-door-trigger"
+            type="button"
+            aria-label="Evergreen door"
+          ></button>
+        </div>
+        <div class="scene-controls">
+          <button
+            class="pause-control"
+            id="pause-control"
+            type="button"
+            aria-label="Pause scene motion and ambience"
+          >
+            Pause
+          </button>
+        </div>
+        <p class="experience-status" id="experience-status" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+  </body>
+</html>
