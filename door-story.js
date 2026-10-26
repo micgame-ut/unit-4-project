@@ -255,7 +255,7 @@ async function playReveal() {
 }
 
 doorTarget.addEventListener("click", () => {
-  if (!isRunning || storyLocked || !rowGroups.length) return;
+  if (!isRunning || storyLocked || activeStory || !rowGroups.length) return;
 
   resetIdle();
   lightRow(litRows);
@@ -270,7 +270,7 @@ doorTarget.addEventListener("click", () => {
 });
 
 setInterval(() => {
-  if (!isRunning || storyLocked) return;
+  if (!isRunning || storyLocked || activeStory) return;
 
   idleSeconds += 1;
   const reached = HINTS.filter((hint) => idleSeconds >= hint.after).at(-1);

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="app.js" defer></script>
     <script src="door-story.js" defer></script>
+    <script src="clock-story.js" defer></script>
   </head>
   <body>
     <main class="experience">
@@ -86,9 +87,21 @@
           <img class="layer layer--foreground-bottom-leaves" src="assets/layers/gothic_assets/gothic_parallax/trimmed/24_foreground_bottom_leaves.png" style="left: 0px; top: 1404px; width: 941px; height: 268px" alt="" decoding="async">
           <!-- Story 1 trigger: one door-sized target; last in the stage so its focus ring sits on top. -->
           <button class="door-target" id="door-target" type="button" aria-label="Christmas-tree door. Tap to light its ornaments."></button>
+          <!-- Story 2 trigger: a target over the tower's clock face. -->
+          <button class="clock-target" id="clock-target" type="button" aria-label="Clock tower clock. Tap to look closer."></button>
+          <!-- Story 2 close-up: its own 941x1672 scene, grown out of the clock when opened. -->
+          <div class="closeup" id="clock-closeup" role="group" aria-label="Close-up of the clock face" hidden>
+            <img class="closeup__scene" src="assets/story2/clock-closeup.webp" alt="" decoding="async">
+            <div class="closeup__face" id="clock-face"></div>
+            <img class="closeup__hand closeup__hand--hour" id="hour-hand" src="assets/story2/clock-hand-hour.png" alt="" decoding="async">
+            <div class="closeup__hand closeup__hand--minute" id="minute-hand" role="slider" tabindex="0" aria-label="Minute hand. Turn it clockwise toward midnight." aria-valuemin="0" aria-valuemax="719" aria-valuenow="0">
+              <img src="assets/story2/clock-hand-minute.png" alt="" decoding="async">
+            </div>
+          </div>
         </div>
         <p class="story-hint" id="story-hint" role="status" aria-live="polite"></p>
         <div class="scene-controls">
+          <button class="pause-control" id="clock-back" type="button" hidden>Back</button>
           <button
             class="pause-control"
             id="pause-control"

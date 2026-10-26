@@ -431,7 +431,115 @@ h1 span {
   display: none;
 }
 
+/* Story 2: tap target over the tower clock, and the close-up scene it opens. */
+.clock-target {
+  position: absolute;
+  left: 496px;
+  top: 389px;
+  width: 120px;
+  height: 120px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.clock-target:focus-visible {
+  outline: 6px solid var(--cream);
+  outline-offset: 4px;
+}
+
+.clock-target--hinting {
+  box-shadow: 0 0 36px 10px rgb(255 226 150 / 55%);
+}
+
+.scene:not(.scene--reduced-motion) .clock-target--hinting {
+  animation: door-hint 2.4s ease-in-out infinite;
+}
+
+.closeup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 941px;
+  height: 1672px;
+  overflow: hidden;
+}
+
+.closeup[hidden] {
+  display: none;
+}
+
+.closeup__scene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 941px;
+  height: 1672px;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+/* Drag surface: the clock face, centered on the hands' pivot (480, 866). */
+.closeup__face {
+  position: absolute;
+  top: 495px;
+  left: 109px;
+  width: 742px;
+  height: 742px;
+  border-radius: 50%;
+  cursor: grab;
+  touch-action: none;
+}
+
+.closeup__face:active {
+  cursor: grabbing;
+}
+
+/* Each hand sits with its hub on the face center and turns about it. */
+.closeup__hand {
+  position: absolute;
+  pointer-events: none;
+  filter: drop-shadow(0 5px 6px rgb(0 0 0 / 55%));
+}
+
+.closeup__hand img {
+  display: block;
+}
+
+/* Sizes and pivots come from assets/story2/clock-hands.json (hub = face center). */
+.closeup__hand--hour {
+  top: 661.3px;
+  left: 447.7px;
+  width: 66px;
+  height: 241px;
+  transform-origin: 32.3px 204.7px;
+}
+
+.closeup__hand--minute {
+  top: 554.9px;
+  left: 447.7px;
+  width: 65px;
+  height: 343px;
+  transform-origin: 32.3px 311.1px;
+}
+
+/* A glow instead of a box outline, which would swing around with the hand. */
+.closeup__hand--minute:focus-visible {
+  outline: none;
+  filter: drop-shadow(0 0 12px var(--cream)) drop-shadow(0 0 4px var(--cream)) drop-shadow(0 5px 6px rgb(0 0 0 / 55%));
+}
+
+.closeup__hand--hinting {
+  filter: drop-shadow(0 0 14px rgb(255 226 150 / 90%)) drop-shadow(0 5px 6px rgb(0 0 0 / 55%));
+}
+
 .scene-controls {
+  display: flex;
+  gap: 8px;
   position: absolute;
   z-index: 1;
   top: max(16px, env(safe-area-inset-top));

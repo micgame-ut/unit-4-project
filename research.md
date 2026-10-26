@@ -75,6 +75,13 @@ Followed the instructor's demonstrated workflow: generate many variations quickl
 - **Clock chime:** ["thirteen clock chimes high.ogg" by thebelltollsforthee](https://freesound.org/people/thebelltollsforthee/sounds/234726), 27 s, bundled as `assets/audio/clock-chime-13.mp3` (0.59 MB preview). Plays at volume 0.5, first after 25 s of running time and every 75 s after. At the Developer's request only the first 9 s (about five strikes) play, with a 1.5 s fade, because the full 27 s was too long (no audio editor installed, so it is trimmed in `app.js`); the schedule counts only running seconds, so Pause holds it.
 - Credit as requested by neither author (CC0 needs none); recorded here for provenance.
 
+### Story 2 clock art (2026-10-26)
+
+- **Generator:** ChatGPT (OpenAI) image generation, Chat mode, with `assets/concepts/gothic-02.png` attached as the style reference. Prompts are in `assets/concepts/story2-clock-prompts.md`; the hands were requested in two follow-up messages in the same chat. Of two close-up candidates, the Developer approved candidate 1 (candidate 2 had a drawn center cap, against the prompt). ChatGPT's "which image do you like more?" prompt was skipped.
+- **Outputs kept as sources:** `assets/concepts/clock-closeup-01.png` (941x1672), `clock-hand-hour.png` and `clock-hand-minute.png` (RGBA, transparent backgrounds verified by alpha measurement).
+- **Web versions** (`assets/story2/`): the close-up converted to WebP (343 KB); each hand trimmed to its visible pixels and scaled to 34% (about 25 KB each), with hub pivots recorded in `clock-hands.json`. Conversion was format and size only, done in the browser; no art was redrawn or cut by the Agent.
+- Generator terms of use for the images remain unverified (see earlier notes).
+
 ## Revisions
 
 Update decisions when new evidence changes the direction, linking to playtest observations in `plan.md` rather than copying them. Keep chosen behavior and asset requirements in `spec.md`. The Developer confirms when the inquiry is sufficient to continue building; exhaustive research is not a prerequisite.

@@ -1,0 +1,17 @@
+{
+  "scale": 0.34,
+  "hour": {
+    "width": 66,
+    "height": 241,
+    "pivotX": 32.3,
+    "pivotY": 204.7,
+    "status": 201
+  },
+  "minute": {
+    "width": 65,
+    "height": 343,
+    "pivotX": 32.3,
+    "pivotY": 311.1,
+    "status": 201
+  }
+}

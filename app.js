@@ -15,6 +15,9 @@ const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
 const ART_WIDTH = 941;
 const ART_HEIGHT = 1672;
 let isRunning = false;
+// Set to a story's name while one has taken over the scene (e.g. the clock
+// close-up), so the other stories ignore taps and stop giving hints.
+let activeStory = null;
 
 function fitStage() {
   const { clientWidth, clientHeight } = scene;
