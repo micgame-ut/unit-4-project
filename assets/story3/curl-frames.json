@@ -1,0 +1,44 @@
+{
+  "frames": [
+    {
+      "file": "curl_00.png",
+      "left": 534,
+      "top": 152,
+      "width": 179,
+      "height": 173,
+      "status": 201
+    },
+    {
+      "file": "curl_01.png",
+      "left": 534,
+      "top": 88,
+      "width": 270,
+      "height": 248,
+      "status": 201
+    },
+    {
+      "file": "curl_02.png",
+      "left": 534,
+      "top": 48,
+      "width": 330,
+      "height": 281,
+      "status": 201
+    },
+    {
+      "file": "curl_03.png",
+      "left": 534,
+      "top": 22,
+      "width": 390,
+      "height": 303,
+      "status": 201
+    },
+    {
+      "file": "curl_04.png",
+      "left": 534,
+      "top": 102,
+      "width": 245,
+      "height": 244,
+      "status": 201
+    }
+  ]
+}

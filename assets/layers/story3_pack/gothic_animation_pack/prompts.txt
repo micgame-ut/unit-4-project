@@ -1,0 +1,8 @@
+Common curl prompt: Edit the isolated original hill curl, using the full scene as a material and lighting reference. Dark navy fibrous sculpted handmade gothic stop-motion material; cool bluish top-edge light and thin warm amber rim along the lower/inner edge. Keep the same broad vertical left root, entire cutout visible, transparent background; no scenery, trees, text, detached parts, pedestal, trunk, or shadows behind object.
+
+curl_01: Loosened spiral opened about one turn; broad left root flowing right into a larger open hook with a small inward rolled pointed tip.
+curl_02: Half unrolled; broad left root flowing up and right into a long upward sweeping bent taper with a small curled end.
+curl_03: Fully uncurled; long tapering gently S-waving tendril rising to upper right, sharp point, slightly rippled stop-motion cloth, about 450 px long at scene scale; no spiral or loop.
+curl_04: Re-curling; broad left root flowing right and slightly up into one large loose half spiral, open C-shaped curl with pointed tip.
+
+Sleigh prompt: One charming slightly spooky flying sleigh pulled by exactly eight individually countable reindeer in a single-file row, flying left to right in strict side view. Sleigh at far left, small figure in a hat holding reins. Solid near-black silhouette with only faint cool blue rim along top. Entire team visible, no overlap between deer bodies, thin connected harness lines. Transparent background, wide landscape canvas, no scenery, text, ground, moon, watermark or backdrop.

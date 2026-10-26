@@ -1,0 +1,157 @@
+{
+  "format_version": 1,
+  "coordinate_system": "top-left origin, x right, y down",
+  "source_canvas_size": {
+    "width": 941,
+    "height": 1672
+  },
+  "shared_curl_anchor": {
+    "x": 560,
+    "y": 211
+  },
+  "playback_order": [
+    "curl_00.png",
+    "curl_01.png",
+    "curl_02.png",
+    "curl_03.png",
+    "curl_04.png",
+    "curl_00.png"
+  ],
+  "composite_order": [
+    "sky",
+    "03_spiral_hill_body_trees_fence.png",
+    "curl_XX.png"
+  ],
+  "files": [
+    {
+      "name": "attachment_check.png",
+      "canvas_size": {
+        "width": 1250,
+        "height": 390
+      },
+      "mode": "RGB"
+    },
+    {
+      "name": "contact_sheet.png",
+      "canvas_size": {
+        "width": 1440,
+        "height": 800
+      },
+      "mode": "RGB"
+    },
+    {
+      "name": "curl_00.png",
+      "canvas_size": {
+        "width": 941,
+        "height": 1672
+      },
+      "mode": "RGBA",
+      "anchor": {
+        "x": 560,
+        "y": 211
+      },
+      "placement": {
+        "x": 0,
+        "y": 0
+      },
+      "role": "animation_frame"
+    },
+    {
+      "name": "curl_01.png",
+      "canvas_size": {
+        "width": 941,
+        "height": 1672
+      },
+      "mode": "RGBA",
+      "anchor": {
+        "x": 560,
+        "y": 211
+      },
+      "placement": {
+        "x": 0,
+        "y": 0
+      },
+      "role": "animation_frame"
+    },
+    {
+      "name": "curl_02.png",
+      "canvas_size": {
+        "width": 941,
+        "height": 1672
+      },
+      "mode": "RGBA",
+      "anchor": {
+        "x": 560,
+        "y": 211
+      },
+      "placement": {
+        "x": 0,
+        "y": 0
+      },
+      "role": "animation_frame"
+    },
+    {
+      "name": "curl_03.png",
+      "canvas_size": {
+        "width": 941,
+        "height": 1672
+      },
+      "mode": "RGBA",
+      "anchor": {
+        "x": 560,
+        "y": 211
+      },
+      "placement": {
+        "x": 0,
+        "y": 0
+      },
+      "role": "animation_frame"
+    },
+    {
+      "name": "curl_04.png",
+      "canvas_size": {
+        "width": 941,
+        "height": 1672
+      },
+      "mode": "RGBA",
+      "anchor": {
+        "x": 560,
+        "y": 211
+      },
+      "placement": {
+        "x": 0,
+        "y": 0
+      },
+      "role": "animation_frame"
+    },
+    {
+      "name": "sleigh.png",
+      "canvas_size": {
+        "width": 520,
+        "height": 115
+      },
+      "mode": "RGBA",
+      "pixel_size": {
+        "width": 520,
+        "height": 115
+      },
+      "reindeer_count": 8,
+      "direction": "left_to_right",
+      "role": "tightly_cropped_animation_asset"
+    },
+    {
+      "name": "stack_preview.png",
+      "canvas_size": {
+        "width": 941,
+        "height": 1672
+      },
+      "mode": "RGBA"
+    }
+  ],
+  "verification": "alignment_verification.json",
+  "notes": [
+    "curl_00.png is a byte-for-byte copy of supplied 04_spiral_tip.png.",
+    "Every curl retains the original pixels in x < 576, preserving the attachment boundary and anchor.",
+    "Previews only: sky behind the original curl is reconstructed from adjacent source pixels; the supplied layer 03 is composited unchanged."
+  ]
+}

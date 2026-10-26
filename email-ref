@@ -1,0 +1,51 @@
+I hope you are all having some haunting thoughts about the next assignment and getting a good start. I wanted to walk you through my experience building the initial stages of this one, especially following Professor Baker's hint about layers and atmosphere.
+
+I started from the brief: "You'll create Virtual Hallo'weenie', a Halloween-themed phone app with one interactive scene, ambient effects, and three discoverable spooky stories. The tone must be spooky, playful, and appropriate for ages 10 and older, without disturbing gore, realistic violence, or real-world suffering."
+
+My goal is to aim at the lower range of that age group. Younger kids often like to use these kinds of apps, and they are not competing with social media yet. 
+
+I started the process using the template. Claude immediately wanted a scene from me and asked if it could start building as well. I told it no: I would get back to it with assets to establish the scene, and then it could start constructing a prototype. I used Grok's image generator to quickly imagine some scenes. Grok is no different than ChatGPT or Claude image generation, but I find it can very quickly generate lots of versions of an image request.
+
+The last image in that set was the winner: a paper-craft haunted cottage at night. I'll assume the theme park has an attraction like this. Everything the brief asks for is already in the picture: a strong focal point, more than three environmental features, and plenty to tap. I also chose it after the AI suggested the paper-craft style was the easiest to cut up and layer, since flat shapes with soft shadows cut cleanly. It also felt like the right look for the demographic I had in mind.
+
+Next I used ChatGPT to cut the image up. More specifically I asked it to cut the image into pieces and to produce an asset catalog:
+
+ChatGPT did a great job and came back with 52 individual pieces and a catalog overview. The raw pack was 72 MB. AI, given our nicely crafted AI framework, offered on its own to trim each image to get it to a reasonable number of bits. AI got this to 2.4 MB.
+
+I then asked Claude Code (desktop version) to rebuild the entire scene from the layers and make it match the original image from Grok.
+
+This went fairly well. Claude did take a few liberties and added its own bats, a lot of stars I did not want, and changed the scene a bit in minor ways, but most of it was acceptable. Perhaps I could have gotten more fidelity with a better prompt. I touched up the sky and removed the bats (to use as a surprise later) with simple corrective prompts. There were some smaller tweaks too, not worth mentioning.
+
+The AI also added the chimney smoke on its own, which I liked a lot. The chimney was a little off in its animation, and a few prompts took care of that. At this point I also swapped the lavender sky for a dark navy one and made the moon larger.
+
+Atmosphere
+At this point I really wanted to work on the general atmosphere (as Professor Baker told us, a scene with some movement, sound, and a little interactivity can really create an experience). I wanted to add some fog and haze, getting the clouds moving, and some sound, for now just the main soundtrack. And there is the chimney too, which already added some nice movement.
+
+For fog I used Perlin noise, remember this from Foundations in Creative Coding? Rather than placing it over the entire scene, several instances of it sit between the layers, so they have an additive effect on each other and naturally communicate distance. This worked great but really had to be dialed in. To do that I had Claude build a control panel (see below) so I could get the right values by eye, which I then communicated back to Claude as numeric values. How do you implement Perlin noise? Ask Claude to do it, it knows it well. For this kind of effect, image sequences and video can work as well, as Professor Baker suggested.
+
+Next up: the clouds. The clouds drift right to left at different speeds and wrap around, so the sky never empties and the near ones move faster than the far ones. This also made it into the control panel to get the speed right. I also asked for the clouds to be a little transparent to help them fit in the scene.
+
+For the soundtrack I found a piece I liked from Envato Elements (a subscription service), which offers royalty-free assets. See the brief for other options for finding sound and music. I instructed the sound to be played on loop and said that it would be ducked for effects and other sounds in the future.
+
+Putting it on a phone
+At this point I wanted to see it on the phone. Given the phone's chrome and other factors, what you see is not always what you get. And given I was computing fog and playing a soundtrack, I wanted to make sure the phone was performing (not usually a factor these days with modern phones, but it used to be). To fufill the browser's "click before you play sound" requirement, I asked Claude to build a start screen with an Enter button that led to the main scene. Here's what the main scene looks like on the actual phone:
+
+The implementation appears to be doing a good job of being responsive to phone heights and dealing with the browser chrome. It also added (unprompted) a small message area at the bottom. I needed this anyway and it looks good, so I kept it.
+
+Making it feel alive
+With the atmosphere in, the scene was coming along but needed more, so I went after small secondary motion. What I added: the hanging sign sways from its rope in a breeze. The cat plays peekaboo, hidden most of the time and popping up for a few seconds. The ghost floats in place (ready for more shenanigans later). Just those little tweaks helped to bring things alive.
+
+At this point I wanted to experiment with just a little interactivity to make sure it felt right on the actual phone. If so, I can move on and start thinking about a bigger experience overall with the app. My initial candidates were (1) touch the sign to make it swing, (2) touch the bat in the circular window for a surprise (watch the video to find out).
+
+Both these worked great but I felt they would be strengthened with some sound, and I was right (again, see video). But it led me to thinking the message at the bottom should be spoken aloud when touched. I thought, what better voice than Vincent Price (how many know who that is?), so I went to ElevenLabs (I believe their free starter accounts allow for a fair bit of prompts) and I had it make a voice similar to Vincent Price. I then prompted ElevenLabs to create the vocal. That also worked well. 
+
+Here is a short video of the whole experience running, captured on an Apple iPhone 15 Pro Max: ghosttest.mp4
+
+What's next?
+That is what I've done so far: a scene with atmosphere, some movement, sound, and a little interactivity, tested on a real phone. What's next is the first story. The brief asks for a 5 to 10 second sequence with a beginning, middle, and end, triggered by interaction with progressive hints. I've got a lot more thinking to do on that.
+
+How is yours going?
+
+-Prof Freeman
+
+Replies to this email will be posted as a reply to the announcement, which will be seen by everyone in the course.

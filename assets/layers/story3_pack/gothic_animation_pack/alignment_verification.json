@@ -1,0 +1,85 @@
+{
+  "anchor_xy": [
+    560,
+    211
+  ],
+  "preserved_collar_region_xywh": [
+    0,
+    0,
+    576,
+    1672
+  ],
+  "curl_00_byte_identical_to_layer_04": true,
+  "frames": [
+    {
+      "file": "curl_00.png",
+      "preserved_collar_pixel_identical": true,
+      "canvas_size": [
+        941,
+        1672
+      ],
+      "visible_bounds_xywh": [
+        534,
+        152,
+        179,
+        173
+      ]
+    },
+    {
+      "file": "curl_01.png",
+      "preserved_collar_pixel_identical": true,
+      "canvas_size": [
+        941,
+        1672
+      ],
+      "visible_bounds_xywh": [
+        534,
+        88,
+        270,
+        248
+      ]
+    },
+    {
+      "file": "curl_02.png",
+      "preserved_collar_pixel_identical": true,
+      "canvas_size": [
+        941,
+        1672
+      ],
+      "visible_bounds_xywh": [
+        534,
+        48,
+        330,
+        281
+      ]
+    },
+    {
+      "file": "curl_03.png",
+      "preserved_collar_pixel_identical": true,
+      "canvas_size": [
+        941,
+        1672
+      ],
+      "visible_bounds_xywh": [
+        534,
+        22,
+        390,
+        303
+      ]
+    },
+    {
+      "file": "curl_04.png",
+      "preserved_collar_pixel_identical": true,
+      "canvas_size": [
+        941,
+        1672
+      ],
+      "visible_bounds_xywh": [
+        534,
+        102,
+        245,
+        244
+      ]
+    }
+  ]
+}
