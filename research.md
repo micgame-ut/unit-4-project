@@ -90,6 +90,11 @@ Followed the instructor's demonstrated workflow: generate many variations quickl
 - Screen effects (moon flare, vignette, glitter trail, star glints) and the wind and jingle-bell sounds are generated in code; no audio files were added.
 - Generator terms of use for the images remain unverified (see earlier notes).
 
+### Generator terms of use check (2026-10-26)
+
+- **OpenAI (ChatGPT images):** the primary terms page (openai.com/policies/row-terms-of-use) returned HTTP 403 to automated fetch, so it was **not** read directly. Secondary sources ([terms.law comparison](https://terms.law/ai-output-rights/comparison), an [OpenAI community thread quoting the terms](https://community.openai.com/t/can-i-sell-images-that-dall-e-created/595044), and a [2026 explainer](https://blog.kaboompics.com/can-you-use-ai-generated-images-for-commercial-use/)) consistently report that OpenAI assigns its rights in Output to the user, usable for any purpose including commercial, subject to compliance with the terms. They also note that ownership is contractual, purely machine-generated output may lack copyright protection, and similar output can go to other users. The sources are mostly law-firm marketing and forums and conflict on free-tier details. **Status: not confirmed from the primary source; the Developer should read OpenAI's current Terms of Use before delivery.** This is a class project and the art is credited as generated with ChatGPT (OpenAI).
+- **xAI (Grok):** concepts `grok-concept-01..04` came from Grok Imagine's free tier before it ran out. Its terms were not checked; the final scene uses the ChatGPT-generated `gothic-02.png`, and the Grok concepts are archived sources only.
+
 ## Revisions
 
 Update decisions when new evidence changes the direction, linking to playtest observations in `plan.md` rather than copying them. Keep chosen behavior and asset requirements in `spec.md`. The Developer confirms when the inquiry is sufficient to continue building; exhaustive research is not a prerequisite.
