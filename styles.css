@@ -514,10 +514,11 @@ h1 span {
 /* Story 2: tap target over the tower clock, and the close-up scene it opens. */
 .clock-target {
   position: absolute;
-  left: 496px;
-  top: 389px;
-  width: 120px;
-  height: 120px;
+  /* Centered on the clock (556, 449); 136 art px is 44+ css px at 320-wide phones. */
+  left: 488px;
+  top: 381px;
+  width: 136px;
+  height: 136px;
   padding: 0;
   border: 0;
   border-radius: 50%;
