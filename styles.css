@@ -169,6 +169,171 @@ h1 span {
   pointer-events: none;
 }
 
+/* Light overlays: soft radial glows added by app.js at hotspot positions.
+   They are lit and still by default; motion only runs while the scene is
+   playing and the device has not asked for reduced motion. */
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0.8;
+}
+
+.glow--window,
+.glow--pumpkin,
+.glow--lantern {
+  background: radial-gradient(circle, rgb(255 196 96 / 85%) 0%, rgb(255 140 40 / 35%) 38%, transparent 70%);
+}
+
+.glow--pumpkin {
+  background: radial-gradient(circle, rgb(255 160 50 / 85%) 0%, rgb(255 100 20 / 35%) 40%, transparent 70%);
+}
+
+.glow--moon {
+  background: radial-gradient(circle, rgb(200 215 255 / 50%) 0%, rgb(150 170 235 / 22%) 45%, transparent 70%);
+  opacity: 0.85;
+}
+
+.scene:not(.scene--reduced-motion) .glow--window,
+.scene:not(.scene--reduced-motion) .glow--pumpkin,
+.scene:not(.scene--reduced-motion) .glow--lantern {
+  animation: flicker var(--glow-speed) steps(1, end) var(--glow-delay) infinite;
+}
+
+.scene:not(.scene--reduced-motion) .glow--moon {
+  animation: moon-breathe 7s ease-in-out infinite;
+}
+
+/* Pausing freezes each glow on its current frame; Play resumes from there. */
+.scene--paused .glow {
+  animation-play-state: paused !important;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.8; }
+  12% { opacity: 0.55; }
+  18% { opacity: 0.95; }
+  41% { opacity: 0.7; }
+  47% { opacity: 1; }
+  73% { opacity: 0.6; }
+  80% { opacity: 0.9; }
+}
+
+@keyframes moon-breathe {
+  0%, 100% { opacity: 0.6; transform: scale(0.96); }
+  50% { opacity: 1; transform: scale(1.06); }
+}
+
+/* Fog: each band is a stage-wide window onto a 2x-wide strip whose blobs repeat
+   every 941px, so sliding the strip by exactly one tile loops with no seam. */
+.fog {
+  position: absolute;
+  left: 0;
+  width: 941px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.fog__drift {
+  width: 1882px;
+  height: 100%;
+  background-repeat: repeat-x;
+  background-size: 941px 100%;
+  background-image:
+    radial-gradient(ellipse 240px 42% at 18% 55%, rgb(190 205 235 / 55%), transparent 100%),
+    radial-gradient(ellipse 300px 36% at 52% 42%, rgb(190 205 235 / 45%), transparent 100%),
+    radial-gradient(ellipse 220px 46% at 84% 60%, rgb(190 205 235 / 50%), transparent 100%);
+  filter: blur(14px);
+}
+
+.fog--hill { top: 250px; height: 220px; opacity: 0.55; }
+.fog--town { top: 520px; height: 260px; opacity: 0.7; }
+.fog--ground { top: 1200px; height: 300px; opacity: 0.6; }
+
+.scene:not(.scene--reduced-motion) .fog__drift {
+  animation: fog-drift 70s linear infinite;
+}
+
+.scene:not(.scene--reduced-motion) .fog--town .fog__drift {
+  animation-duration: 50s;
+}
+
+.scene:not(.scene--reduced-motion) .fog--ground .fog__drift {
+  animation-direction: reverse;
+  animation-duration: 90s;
+}
+
+.scene--paused .fog__drift {
+  animation-play-state: paused !important;
+}
+
+@keyframes fog-drift {
+  to { transform: translateX(-941px); }
+}
+
+/* Branch sway: small rotations about the pivots in hotspots.json (branchPivots),
+   written relative to each layer's own top-left offset. */
+.layer--left-foreground-upper-branches {
+  transform-origin: 34px 226px;
+}
+
+.layer--right-foreground-upper-branches {
+  transform-origin: 402px 134px;
+}
+
+.scene:not(.scene--reduced-motion) .layer--left-foreground-upper-branches {
+  animation: branch-sway 9s ease-in-out infinite alternate;
+}
+
+.scene:not(.scene--reduced-motion) .layer--right-foreground-upper-branches {
+  animation: branch-sway 11s ease-in-out -4s infinite alternate-reverse;
+}
+
+@keyframes branch-sway {
+  from { transform: rotate(-1.4deg); }
+  to { transform: rotate(1.4deg); }
+}
+
+/* Shutters: the two halves of layer 10, clipped at its midpoint and swung about
+   their hinge edges (shutterHinges in hotspots.json). They rest flat and open;
+   a gust throws each outward, then it slams back against the wall. --swing
+   flips the direction so both free edges come toward the viewer. */
+.layer--shutter-left {
+  clip-path: inset(0 53px 0 0);
+  transform-origin: 27px 44px;
+  --swing: 1;
+}
+
+.layer--shutter-right {
+  clip-path: inset(0 0 0 53px);
+  transform-origin: 75px 44px;
+  --swing: -1;
+}
+
+.scene:not(.scene--reduced-motion) .layer--shutter-left {
+  animation: shutter-bang 7s ease-in-out infinite;
+}
+
+.scene:not(.scene--reduced-motion) .layer--shutter-right {
+  animation: shutter-bang 7s ease-in-out -2.3s infinite;
+}
+
+@keyframes shutter-bang {
+  0%, 58% { transform: perspective(260px) rotateY(0deg); }
+  66% { transform: perspective(260px) rotateY(calc(var(--swing) * 42deg)); }
+  70% { transform: perspective(260px) rotateY(0deg); }
+  73% { transform: perspective(260px) rotateY(calc(var(--swing) * 9deg)); }
+  76%, 100% { transform: perspective(260px) rotateY(0deg); }
+}
+
+.scene--paused .layer--left-foreground-upper-branches,
+.scene--paused .layer--right-foreground-upper-branches,
+.scene--paused .layer--shutter-left,
+.scene--paused .layer--shutter-right {
+  animation-play-state: paused !important;
+}
+
 .scene-controls {
   position: absolute;
   z-index: 1;

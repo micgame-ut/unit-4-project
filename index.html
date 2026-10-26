@@ -35,6 +35,9 @@
         loop
       ></audio>
 
+      <audio id="wind-audio" src="assets/audio/wind-howl.mp3" preload="none" loop></audio>
+      <audio id="chime-audio" src="assets/audio/clock-chime-13.mp3" preload="none"></audio>
+
       <section
         class="scene"
         id="scene"
@@ -59,13 +62,19 @@
           <img class="layer layer--clock-face-hands" src="assets/layers/gothic_assets/gothic_parallax/trimmed/07_clock_face_hands.png" style="left: 541px; top: 432px; width: 32px; height: 36px" alt="" decoding="async">
           <img class="layer layer--town-left-front-buildings" src="assets/layers/gothic_assets/gothic_parallax/trimmed/08_town_left_front_buildings.png" style="left: 36px; top: 342px; width: 363px; height: 325px" alt="" decoding="async">
           <img class="layer layer--biggest-house-purple-roof" src="assets/layers/gothic_assets/gothic_parallax/trimmed/09_biggest_house_purple_roof.png" style="left: 626px; top: 429px; width: 312px; height: 284px" alt="" decoding="async">
-          <img class="layer layer--biggest-house-open-shutters" src="assets/layers/gothic_assets/gothic_parallax/trimmed/10_biggest_house_open_shutters.png" style="left: 708px; top: 573px; width: 106px; height: 86px" alt="" decoding="async">
+          <!-- Layer 10 holds both shutters; two clipped copies let each swing on its own hinge. -->
+          <img class="layer layer--biggest-house-open-shutters layer--shutter-left" src="assets/layers/gothic_assets/gothic_parallax/trimmed/10_biggest_house_open_shutters.png" style="left: 708px; top: 573px; width: 106px; height: 86px" alt="" decoding="async">
+          <img class="layer layer--biggest-house-open-shutters layer--shutter-right" src="assets/layers/gothic_assets/gothic_parallax/trimmed/10_biggest_house_open_shutters.png" style="left: 708px; top: 573px; width: 106px; height: 86px" alt="" decoding="async">
           <img class="layer layer--town-wall-fences-stairs-path-jackolanterns" src="assets/layers/gothic_assets/gothic_parallax/trimmed/11_town_wall_fences_stairs_path_jackolanterns.png" style="left: 0px; top: 494px; width: 941px; height: 314px" alt="" decoding="async">
+          <!-- Fog bands: code-made mist, one stage-width tile drifting seamlessly. -->
+          <div class="fog fog--hill" aria-hidden="true"><div class="fog__drift"></div></div>
+          <div class="fog fog--town" aria-hidden="true"><div class="fog__drift"></div></div>
           <img class="layer layer--dark-background-forest" src="assets/layers/gothic_assets/gothic_parallax/trimmed/12_dark_background_forest.png" style="left: 0px; top: 575px; width: 941px; height: 1097px" alt="" decoding="async">
           <img class="layer layer--big-door-tree-trunk-arched-frame" src="assets/layers/gothic_assets/gothic_parallax/trimmed/13_big_door_tree_trunk_arched_frame.png" style="left: 19px; top: 682px; width: 887px; height: 640px" alt="" decoding="async">
           <img class="layer layer--door-interior-snowy-christmas" src="assets/layers/gothic_assets/gothic_parallax/trimmed/14_door_interior_snowy_christmas.png" style="left: 401px; top: 927px; width: 203px; height: 318px" alt="" decoding="async">
           <img class="layer layer--green-christmas-door-panel" src="assets/layers/gothic_assets/gothic_parallax/trimmed/15_green_christmas_door_panel.png" style="left: 399px; top: 924px; width: 207px; height: 323px" alt="" decoding="async">
           <img class="layer layer--front-steps-two-lanterns" src="assets/layers/gothic_assets/gothic_parallax/trimmed/16_front_steps_two_lanterns.png" style="left: 343px; top: 1174px; width: 334px; height: 169px" alt="" decoding="async">
+          <div class="fog fog--ground" aria-hidden="true"><div class="fog__drift"></div></div>
           <img class="layer layer--left-bushes-pumpkin" src="assets/layers/gothic_assets/gothic_parallax/trimmed/17_left_bushes_pumpkin.png" style="left: 0px; top: 1125px; width: 433px; height: 488px" alt="" decoding="async">
           <img class="layer layer--right-bushes-pumpkin" src="assets/layers/gothic_assets/gothic_parallax/trimmed/18_right_bushes_pumpkin.png" style="left: 510px; top: 1187px; width: 431px; height: 434px" alt="" decoding="async">
           <img class="layer layer--stone-path" src="assets/layers/gothic_assets/gothic_parallax/trimmed/19_stone_path.png" style="left: 147px; top: 1311px; width: 787px; height: 361px" alt="" decoding="async">

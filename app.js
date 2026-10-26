@@ -6,7 +6,9 @@ const pauseControl = document.querySelector("#pause-control");
 const motionNote = document.querySelector("#motion-note");
 const experienceStatus = document.querySelector("#experience-status");
 const ambienceAudio = document.querySelector("#ambience-audio");
-const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+const windAudio = document.querySelector("#wind-audio");
+const chimeAudio = document.querySelector("#chime-audio");
+const motionPreference =window.matchMedia("(prefers-reduced-motion: reduce)");
 
 // The art is authored at 941x1672 (see the layer manifest). The whole stage
 // scales as one unit so every layer and hotspot keeps its alignment.
@@ -20,6 +22,47 @@ function fitStage() {
 
   const scale = Math.min(clientWidth / ART_WIDTH, clientHeight / ART_HEIGHT);
   stage.style.setProperty("--stage-scale", scale);
+}
+
+// Light overlays (moon halo, window / lantern / jack-o'-lantern glow) are placed
+// from hotspots.json so they share one coordinate source with the art. Each is
+// inserted just before a named layer so it sits at the right depth in the stack.
+const HOTSPOTS_URL = "assets/layers/gothic_assets/gothic_parallax/hotspots.json";
+
+function addGlow(kind, spot, index, beforeLayer, scale) {
+  const glow = document.createElement("div");
+  const size = spot.radius * 2 * scale;
+  glow.className = `glow glow--${kind}`;
+  glow.style.left = `${spot.x - size / 2}px`;
+  glow.style.top = `${spot.y - size / 2}px`;
+  glow.style.width = `${size}px`;
+  glow.style.height = `${size}px`;
+  // Spread timings so neighbours never flicker in step.
+  glow.style.setProperty("--glow-delay", `${-((index * 0.73) % 5).toFixed(2)}s`);
+  glow.style.setProperty("--glow-speed", `${(3.2 + ((index * 0.37) % 2.4)).toFixed(2)}s`);
+  stage.insertBefore(glow, stage.querySelector(`.layer--${beforeLayer}`));
+}
+
+async function addLightGlows() {
+  try {
+    const response = await fetch(HOTSPOTS_URL);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const hotspots = await response.json();
+
+    addGlow("moon", hotspots.moon, 0, "spiral-hill-body-trees-fence", 2.5);
+    hotspots.windows.forEach((spot, i) =>
+      addGlow("window", spot, i, "dark-background-forest", 3)
+    );
+    hotspots.jackolanterns.forEach((spot, i) =>
+      addGlow("pumpkin", spot, i + 3, "dark-background-forest", 3)
+    );
+    hotspots.lanterns.forEach((spot, i) =>
+      addGlow("lantern", spot, i + 1, "left-bushes-pumpkin", 3.4)
+    );
+  } catch (error) {
+    // The art is complete without glows, so a failed load only costs the effect.
+    console.warn("Light glows unavailable:", error);
+  }
 }
 
 // Single switch for everything that moves or sounds. Later effects and
@@ -41,6 +84,50 @@ function updateMotionPreference() {
   motionNote.hidden = !reduceMotion;
 }
 
+// Sound layers on top of the forest bed: a quiet looping wind, and the town
+// clock striking thirteen now and then. The chime schedule counts only seconds
+// spent running, so Pause holds it and Play picks up where it left off.
+windAudio.volume = 0.3;
+chimeAudio.volume = 0.5; // CHIME_VOLUME, set again at each strike
+const FIRST_CHIME_AFTER = 25;
+const CHIME_EVERY = 75;
+// The recording strikes thirteen over 27 s, which is too long. Play only its
+// opening strikes and fade out, then rewind so Play never resumes a cut-off chime.
+const CHIME_PLAY_SECONDS = 9;
+const CHIME_FADE_SECONDS = 1.5;
+const CHIME_VOLUME = 0.5;
+let runningSeconds = 0;
+let nextChimeAt = FIRST_CHIME_AFTER;
+
+setInterval(() => {
+  if (!isRunning) return;
+
+  runningSeconds += 1;
+  if (runningSeconds >= nextChimeAt) {
+    nextChimeAt = runningSeconds + CHIME_EVERY;
+    chimeAudio.currentTime = 0;
+    chimeAudio.volume = CHIME_VOLUME;
+    chimeAudio.play().catch(() => {});
+  }
+}, 1000);
+
+chimeAudio.addEventListener("timeupdate", () => {
+  const fadeStart = CHIME_PLAY_SECONDS - CHIME_FADE_SECONDS;
+  if (chimeAudio.currentTime >= CHIME_PLAY_SECONDS) {
+    chimeAudio.pause();
+    chimeAudio.currentTime = 0;
+  } else if (chimeAudio.currentTime > fadeStart) {
+    const left = (CHIME_PLAY_SECONDS - chimeAudio.currentTime) / CHIME_FADE_SECONDS;
+    chimeAudio.volume = CHIME_VOLUME * Math.max(0, left);
+  }
+});
+
+function pauseSounds() {
+  ambienceAudio.pause();
+  windAudio.pause();
+  chimeAudio.pause();
+}
+
 async function resumeExperience() {
   try {
     if (ambienceAudio.error) {
@@ -48,10 +135,15 @@ async function resumeExperience() {
     }
 
     await ambienceAudio.play();
+    // The extra layers are optional: if one fails, the forest bed still plays.
+    windAudio.play().catch(() => {});
+    if (chimeAudio.currentTime > 0 && !chimeAudio.ended) {
+      chimeAudio.play().catch(() => {});
+    }
     experienceStatus.textContent = "";
     setRunning(true);
   } catch (error) {
-    ambienceAudio.pause();
+    pauseSounds();
     setRunning(false);
     experienceStatus.textContent =
       error instanceof DOMException && error.name === "NotAllowedError"
@@ -70,7 +162,7 @@ enterButton.addEventListener("click", async () => {
 
 pauseControl.addEventListener("click", () => {
   if (isRunning) {
-    ambienceAudio.pause();
+    pauseSounds();
     setRunning(false);
     return;
   }
@@ -90,3 +182,4 @@ window.addEventListener("resize", fitStage);
 motionPreference.addEventListener("change", updateMotionPreference);
 updateMotionPreference();
 setRunning(false);
+void addLightGlows();

@@ -68,6 +68,13 @@ Followed the instructor's demonstrated workflow: generate many variations quickl
 - Openverse search identified CC0 Freesound candidates: ["4-tone chime UP" and "4-tone chime DOWN" by mpaol2023](https://freesound.org/people/mpaol2023/sounds/370182) / [DOWN recording](https://freesound.org/people/mpaol2023/sounds/370177), and ["Wooden door creaking" by TheBuilder15](https://freesound.org/people/TheBuilder15/sounds/367052). Openverse metadata labels each CC0 1.0 and links the [CC0 deed](https://creativecommons.org/publicdomain/zero/1.0/).
 - Their Freesound preview URLs returned HTTP 403 through both PowerShell and curl, so no candidate was bundled. The approved story uses short, original Web Audio chimes instead; the existing locally bundled ambience remains its licensed background audio.
 
+### R2 wind and clock-chime sounds (2026-10-26)
+
+- Freesound CDN previews that returned 403 on 2026-10-19 downloaded normally on 2026-10-26 (HTTP 200, valid MP3s). Candidates came from the Openverse audio API filtered to `license=cc0`, source Freesound; each record's `license` field reads `cc0`, version 1.0, linking the [CC0 deed](https://creativecommons.org/publicdomain/zero/1.0/). Freesound's own pages were not opened, so license evidence is Openverse's metadata, as for the forest bed.
+- **Wind:** ["Wind Howling thru window crack.mp3" by DAVESTALKER](https://freesound.org/people/DAVESTALKER/sounds/331527), 40.5 s, bundled as `assets/audio/wind-howl.mp3` (0.93 MB preview). Loops at volume 0.3 beneath the forest bed.
+- **Clock chime:** ["thirteen clock chimes high.ogg" by thebelltollsforthee](https://freesound.org/people/thebelltollsforthee/sounds/234726), 27 s, bundled as `assets/audio/clock-chime-13.mp3` (0.59 MB preview). Plays at volume 0.5, first after 25 s of running time and every 75 s after. At the Developer's request only the first 9 s (about five strikes) play, with a 1.5 s fade, because the full 27 s was too long (no audio editor installed, so it is trimmed in `app.js`); the schedule counts only running seconds, so Pause holds it.
+- Credit as requested by neither author (CC0 needs none); recorded here for provenance.
+
 ## Revisions
 
 Update decisions when new evidence changes the direction, linking to playtest observations in `plan.md` rather than copying them. Keep chosen behavior and asset requirements in `spec.md`. The Developer confirms when the inquiry is sufficient to continue building; exhaustive research is not a prerequisite.
