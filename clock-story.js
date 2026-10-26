@@ -1,10 +1,10 @@
 // Story 2: the clock tower. Loaded after door-story.js and shares app.js globals
 // (scene, stage, isRunning, activeStory, motionPreference).
 //
-// R4a (this file so far): tap the tower clock -> its close-up grows out of the
-// clock; drag the minute hand around the face (the hour hand follows like the
-// gears of a real clock) until it reads midnight, then zoom back out. The
-// midnight animation and strikes arrive in R4b.
+// Tap the tower clock -> its close-up grows out of the clock; drag the minute
+// hand around the face (the hour hand follows like the gears of a real clock)
+// until it reads midnight, then zoom back out to the town, where the clock
+// strikes twelve and the windows swell with light before everything resets.
 
 const clockTarget = document.querySelector("#clock-target");
 const closeup = document.querySelector("#clock-closeup");
@@ -179,13 +179,20 @@ async function openClock() {
   resetClockIdle();
   closeup.hidden = false;
   clockBack.hidden = false;
+  try {
+    ensureAudio(); // made on this tap so the strikes later are allowed to sound
+  } catch (error) {
+    // No Web Audio: the story still plays, silently.
+  }
   await playZoom("normal");
   clockPhase = "playing";
   minuteHand.focus();
 }
 
-// Called from "playing" (Back) or "solving" (after the hands settle on 12).
-async function closeClock() {
+// Called from "playing" (Back) or "solving" (after the hands settle on 12). When
+// the clock was solved, the midnight scene plays in the town view before control
+// returns; the story stays active (and the targets inert) until it ends.
+async function closeClock({ thenMidnight = false } = {}) {
   if (clockPhase !== "playing" && clockPhase !== "solving") return;
 
   clockPhase = "closing";
@@ -193,10 +200,16 @@ async function closeClock() {
   clockBack.hidden = true;
   await playZoom("reverse");
   closeup.hidden = true;
+
+  if (thenMidnight) {
+    clockPhase = "midnight";
+    await playMidnight();
+  }
+
   clockPhase = "closed";
   activeStory = null;
   setClockInert(false);
-  storyHint.textContent = "";
+  storyHint.textContent = thenMidnight ? "The town settles. Tap the clock to wind it again." : "";
   clockTarget.focus();
 }
 
@@ -212,7 +225,7 @@ clockBack.addEventListener("click", () => {
   if (clockPhase === "playing") void closeClock();
 });
 
-// ---- Solving (R4b replaces the placeholder ending) --------------------------
+// ---- Solving ----------------------------------------------------------------
 
 async function solveClock() {
   clockPhase = "solving";
@@ -236,9 +249,95 @@ async function solveClock() {
   handSnapAnimations.forEach((animation) => animation.cancel());
   handSnapAnimations = [];
 
-  storyHint.textContent = "Midnight!";
-  // R4b adds the midnight scene here, still in the "solving" phase.
-  await closeClock();
+  await closeClock({ thenMidnight: true });
+}
+
+// ---- Midnight (R4b) ---------------------------------------------------------
+// Back in the town view the clock strikes twelve. Every strike is a synthesized
+// bell on the Web Audio clock and a pulse of the moon; the town's windows,
+// jack-o'-lanterns and lanterns swell with light in a ripple from left to right.
+// Pausing suspends the audio clock and pauses every animation here together.
+
+const STRIKE_COUNT = 12;
+const STRIKE_GAP_S = 0.33;
+const BLOOM_MS = 1400;
+const RIPPLE_MS = 2400; // time for the ripple to cross the whole town
+const BELL_HZ = 196; // G3
+// [frequency ratio, loudness, decay seconds]: an uneven set of partials sounds like metal.
+const BELL_PARTIALS = [[1, 0.5, 2.4], [2.0, 0.25, 1.6], [2.76, 0.2, 1.1], [5.4, 0.1, 0.6], [8.93, 0.05, 0.4]];
+
+let midnightAnimations = [];
+
+function ensureAudio() {
+  audioContext ??= new AudioContext(); // shared with door-story.js
+  if (audioContext.state === "suspended" && isRunning) void audioContext.resume();
+  return audioContext;
+}
+
+function playBell(when) {
+  const context = ensureAudio();
+  BELL_PARTIALS.forEach(([ratio, loudness, decay]) => {
+    const tone = context.createOscillator();
+    const gain = context.createGain();
+    tone.type = "sine";
+    tone.frequency.value = BELL_HZ * ratio;
+    gain.gain.setValueAtTime(0.0001, when);
+    gain.gain.exponentialRampToValueAtTime(loudness * 0.22, when + 0.005);
+    gain.gain.exponentialRampToValueAtTime(0.0001, when + decay);
+    tone.connect(gain).connect(context.destination);
+    tone.start(when);
+    tone.stop(when + decay + 0.05);
+  });
+}
+
+function bloomKeyframes(reduceMotion) {
+  // Reduced motion keeps the light swell but drops the growing of the glow.
+  const grow = (scale) => (reduceMotion ? {} : { transform: `scale(${scale})` });
+  return [
+    { opacity: 0.8, ...grow(1) },
+    { opacity: 1, ...grow(2.1), offset: 0.25 },
+    { opacity: 1, ...grow(1.5), offset: 0.7 },
+    { opacity: 0.8, ...grow(1) },
+  ];
+}
+
+async function playMidnight() {
+  const reduceMotion = motionPreference.matches;
+  storyHint.textContent = "The clock strikes twelve.";
+
+  try {
+    const start = ensureAudio().currentTime + 0.1;
+    for (let strike = 0; strike < STRIKE_COUNT; strike += 1) playBell(start + strike * STRIKE_GAP_S);
+  } catch (error) {
+    // Sound is a bonus; the light show still plays without it.
+  }
+
+  stage.querySelectorAll(".glow--window, .glow--pumpkin, .glow--lantern").forEach((glow) => {
+    const centerX = glow.offsetLeft + glow.offsetWidth / 2;
+    midnightAnimations.push(
+      glow.animate(bloomKeyframes(reduceMotion), {
+        duration: BLOOM_MS,
+        delay: (centerX / ART_WIDTH) * RIPPLE_MS,
+        easing: "ease-in-out",
+        fill: "backwards",
+      })
+    );
+  });
+
+  const moonGlow = stage.querySelector(".glow--moon");
+  if (moonGlow && !reduceMotion) {
+    // One swell of the moon per strike.
+    midnightAnimations.push(
+      moonGlow.animate(
+        [{ transform: "scale(1)" }, { transform: "scale(1.15)", offset: 0.3 }, { transform: "scale(1)" }],
+        { duration: STRIKE_GAP_S * 1000, iterations: STRIKE_COUNT, easing: "ease-out" }
+      )
+    );
+  }
+
+  if (!isRunning) midnightAnimations.forEach((animation) => animation.pause());
+  await Promise.all(midnightAnimations.map((animation) => animation.finished));
+  midnightAnimations = [];
 }
 
 // ---- Hints ------------------------------------------------------------------
@@ -271,7 +370,7 @@ setInterval(() => {
 // Pause freezes the zoom and the hand settle; Play resumes them.
 scene.addEventListener("runningchange", (event) => {
   const { running } = event.detail;
-  [zoomAnimation, ...handSnapAnimations].forEach((animation) => {
+  [zoomAnimation, ...handSnapAnimations, ...midnightAnimations].forEach((animation) => {
     if (animation) running ? animation.play() : animation.pause();
   });
 });
