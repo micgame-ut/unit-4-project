@@ -334,6 +334,84 @@ h1 span {
   animation-play-state: paused !important;
 }
 
+/* Story 1 ornaments: unlit until a tap adds .glow--lit, then they fade in. */
+.glow--ornament {
+  background: radial-gradient(circle, #fff 0%, var(--ornament-color) 28%, transparent 68%);
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.glow--star {
+  background: radial-gradient(circle, #fff 0%, rgb(255 226 120 / 85%) 30%, transparent 70%);
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.glow--lit {
+  opacity: 1;
+}
+
+/* The one tap target over the door. Transparent; the art shows through. */
+.door-target {
+  position: absolute;
+  left: 399px;
+  top: 924px;
+  width: 207px;
+  height: 323px;
+  padding: 0;
+  border: 0;
+  border-radius: 100px 100px 12px 12px;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.door-target:focus-visible {
+  outline: 6px solid var(--cream);
+  outline-offset: 6px;
+}
+
+/* Idle hint: a soft pulsing halo around the door. */
+.door-target--hinting {
+  box-shadow: 0 0 40px 12px rgb(255 226 150 / 55%);
+}
+
+.scene:not(.scene--reduced-motion) .door-target--hinting {
+  animation: door-hint 2.4s ease-in-out infinite;
+}
+
+.scene--paused .door-target {
+  animation-play-state: paused !important;
+}
+
+@keyframes door-hint {
+  0%, 100% { box-shadow: 0 0 14px 2px rgb(255 226 150 / 15%); }
+  50% { box-shadow: 0 0 46px 16px rgb(255 226 150 / 65%); }
+}
+
+.story-hint {
+  position: absolute;
+  z-index: 1;
+  right: 16px;
+  bottom: max(72px, calc(env(safe-area-inset-bottom) + 56px));
+  left: 16px;
+  width: fit-content;
+  max-width: min(32rem, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 10px 14px;
+  border-radius: 12px;
+  color: #fff7ed;
+  background: rgb(10 13 26 / 82%);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
+  pointer-events: none;
+}
+
+.story-hint:empty {
+  display: none;
+}
+
 .scene-controls {
   position: absolute;
   z-index: 1;

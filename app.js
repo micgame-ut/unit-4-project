@@ -8,7 +8,7 @@ const experienceStatus = document.querySelector("#experience-status");
 const ambienceAudio = document.querySelector("#ambience-audio");
 const windAudio = document.querySelector("#wind-audio");
 const chimeAudio = document.querySelector("#chime-audio");
-const motionPreference =window.matchMedia("(prefers-reduced-motion: reduce)");
+const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 // The art is authored at 941x1672 (see the layer manifest). The whole stage
 // scales as one unit so every layer and hotspot keeps its alignment.
@@ -43,11 +43,16 @@ function addGlow(kind, spot, index, beforeLayer, scale) {
   stage.insertBefore(glow, stage.querySelector(`.layer--${beforeLayer}`));
 }
 
+// Loaded once and shared: the ambient glows here and the stories in
+// door-story.js all read the same hotspot coordinates.
+const hotspotsPromise = fetch(HOTSPOTS_URL).then((response) => {
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  return response.json();
+});
+
 async function addLightGlows() {
   try {
-    const response = await fetch(HOTSPOTS_URL);
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const hotspots = await response.json();
+    const hotspots = await hotspotsPromise;
 
     addGlow("moon", hotspots.moon, 0, "spiral-hill-body-trees-fence", 2.5);
     hotspots.windows.forEach((spot, i) =>
@@ -69,6 +74,7 @@ async function addLightGlows() {
 // stories hook into this so Play/Pause stops them all together.
 function setRunning(running) {
   isRunning = running;
+  scene.dispatchEvent(new CustomEvent("runningchange", { detail: { running } }));
   scene.classList.toggle("scene--running", running);
   scene.classList.toggle("scene--paused", !running);
   pauseControl.textContent = running ? "Pause" : "Play";

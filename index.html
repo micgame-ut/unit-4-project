@@ -7,6 +7,7 @@
     <title>Moonlit Doorwood</title>
     <link rel="stylesheet" href="styles.css">
     <script src="app.js" defer></script>
+    <script src="door-story.js" defer></script>
   </head>
   <body>
     <main class="experience">
@@ -50,7 +51,7 @@
         <div
           class="stage"
           id="stage"
-          role="img"
+          role="group"
           aria-label="A stop-motion style night scene: a huge moon behind a curling spiral hill, a crooked town with glowing windows and a clock tower, and a great twisted tree with a green Christmas-tree door at the end of a stone path."
         >
           <img class="layer layer--sky-stars" src="assets/layers/gothic_assets/gothic_parallax/trimmed/01_sky_stars.png" style="left: 0px; top: 0px; width: 941px; height: 1672px" alt="" decoding="async">
@@ -83,7 +84,10 @@
           <img class="layer layer--right-foreground-trunk" src="assets/layers/gothic_assets/gothic_parallax/trimmed/22_right_foreground_trunk.png" style="left: 651px; top: 0px; width: 290px; height: 1672px" alt="" decoding="async">
           <img class="layer layer--right-foreground-upper-branches" src="assets/layers/gothic_assets/gothic_parallax/trimmed/23_right_foreground_upper_branches.png" style="left: 499px; top: 0px; width: 442px; height: 207px" alt="" decoding="async">
           <img class="layer layer--foreground-bottom-leaves" src="assets/layers/gothic_assets/gothic_parallax/trimmed/24_foreground_bottom_leaves.png" style="left: 0px; top: 1404px; width: 941px; height: 268px" alt="" decoding="async">
+          <!-- Story 1 trigger: one door-sized target; last in the stage so its focus ring sits on top. -->
+          <button class="door-target" id="door-target" type="button" aria-label="Christmas-tree door. Tap to light its ornaments."></button>
         </div>
+        <p class="story-hint" id="story-hint" role="status" aria-live="polite"></p>
         <div class="scene-controls">
           <button
             class="pause-control"
