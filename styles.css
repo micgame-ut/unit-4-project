@@ -431,6 +431,86 @@ h1 span {
   display: none;
 }
 
+/* Story 3: the sleigh silhouette and its screen effects. Everything here is
+   invisible at rest; moon-story.js animates it and removes the temporary bits. */
+.sleigh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 364px;
+  height: 80px;
+  max-width: none;
+  opacity: 0;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.sparkle,
+.sparkle-dust {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  border-radius: 50%;
+}
+
+/* Gold glitter shed behind the sleigh. */
+.sparkle-dust {
+  background: radial-gradient(circle, #fff6c8 0%, #ffcf5a 45%, transparent 75%);
+}
+
+/* A four-point glint for the star twinkle wave. */
+.sparkle {
+  width: 34px;
+  height: 34px;
+  background:
+    linear-gradient(90deg, transparent 0%, #fff 50%, transparent 100%) center / 100% 3px no-repeat,
+    linear-gradient(0deg, transparent 0%, #fff 50%, transparent 100%) center / 3px 100% no-repeat,
+    radial-gradient(circle, #fff 0%, rgb(255 255 255 / 0%) 55%);
+}
+
+/* A soft dark vignette that dims the edges so the moon and sleigh stand out. */
+.night-veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle at 29% 13%, transparent 12%, rgb(4 6 22 / 62%) 75%);
+}
+
+/* Tap target: a circle over the moon (hotspots.json moon: x 277, y 214, r 164). */
+.moon-target {
+  position: absolute;
+  left: 113px;
+  top: 50px;
+  width: 328px;
+  height: 328px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.moon-target:focus-visible {
+  outline: 6px solid var(--cream);
+  outline-offset: 6px;
+}
+
+.moon-target--hinting {
+  box-shadow: 0 0 60px 18px rgb(255 240 190 / 40%);
+}
+
+.scene:not(.scene--reduced-motion) .moon-target--hinting {
+  animation: door-hint 2.4s ease-in-out infinite;
+}
+
+.scene--paused .moon-target,
+.scene--paused .clock-target {
+  animation-play-state: paused !important;
+}
+
 /* Story 2: tap target over the tower clock, and the close-up scene it opens. */
 .clock-target {
   position: absolute;

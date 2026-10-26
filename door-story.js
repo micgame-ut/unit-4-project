@@ -223,6 +223,7 @@ function buildSnow(reduceMotion) {
 
 async function playReveal() {
   storyLocked = true;
+  activeStory = "door";
   storyHint.textContent = "The door swings open on a snowy Christmas world.";
 
   const reduceMotion = motionPreference.matches;
@@ -250,6 +251,7 @@ async function playReveal() {
   pivotedParts.forEach((part) => part.style.removeProperty("transform-origin"));
   resetLights();
   storyLocked = false;
+  activeStory = null;
   resetIdle();
   storyHint.textContent = "The snow clears. Tap the door to play again.";
 }

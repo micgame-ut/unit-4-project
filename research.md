@@ -82,6 +82,14 @@ Followed the instructor's demonstrated workflow: generate many variations quickl
 - **Web versions** (`assets/story2/`): the close-up converted to WebP (343 KB); each hand trimmed to its visible pixels and scaled to 34% (about 25 KB each), with hub pivots recorded in `clock-hands.json`. Conversion was format and size only, done in the browser; no art was redrawn or cut by the Agent.
 - Generator terms of use for the images remain unverified (see earlier notes).
 
+### Story 3 sleigh art (2026-10-26)
+
+- **Generator:** ChatGPT (OpenAI), Work mode (GPT-6.1 Sol Medium), with `gothic-02.png` and the moon, hill and spiral-tip layers attached. The prompt is in `assets/concepts/story3-spiral-prompts.md`; the first attempt failed with "image-processing workspace unavailable" and a single retry succeeded after about 11.5 minutes. Output: a zip of five curl frames and a sleigh sprite (near-black sleigh and eight reindeer, 520x115 RGBA).
+- **Used:** `assets/story3/sleigh.png` (the sprite, unchanged).
+- **Not used:** the five curl-uncurl frames. The Developer judged that the uncurled hill did not line up with the scene, so the uncurl was dropped and the story became a sleigh crossing the moon with screen effects. The frames and the original pack stay uncommitted.
+- Screen effects (moon flare, vignette, glitter trail, star glints) and the wind and jingle-bell sounds are generated in code; no audio files were added.
+- Generator terms of use for the images remain unverified (see earlier notes).
+
 ## Revisions
 
 Update decisions when new evidence changes the direction, linking to playtest observations in `plan.md` rather than copying them. Keep chosen behavior and asset requirements in `spec.md`. The Developer confirms when the inquiry is sufficient to continue building; exhaustive research is not a prerequisite.

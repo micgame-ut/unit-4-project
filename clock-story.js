@@ -35,6 +35,7 @@ let clockIdleSeconds = 0;
 let zoomAnimation = null;
 let handSnapAnimations = [];
 let dragLastAngle = null;
+let clockOpenedByKeyboard = false;
 
 const modulo = (value, divisor) => ((value % divisor) + divisor) % divisor;
 
@@ -186,7 +187,7 @@ async function openClock() {
   }
   await playZoom("normal");
   clockPhase = "playing";
-  minuteHand.focus();
+  if (clockOpenedByKeyboard) minuteHand.focus();
 }
 
 // Called from "playing" (Back) or "solving" (after the hands settle on 12). When
@@ -210,7 +211,7 @@ async function closeClock({ thenMidnight = false } = {}) {
   activeStory = null;
   setClockInert(false);
   storyHint.textContent = thenMidnight ? "The town settles. Tap the clock to wind it again." : "";
-  clockTarget.focus();
+  if (clockOpenedByKeyboard) clockTarget.focus(); // a focus ring would be noise for touch and mouse
 }
 
 // While the close-up is open, the tower and door targets underneath must not take
@@ -218,9 +219,13 @@ async function closeClock({ thenMidnight = false } = {}) {
 function setClockInert(inert) {
   clockTarget.inert = inert;
   doorTarget.inert = inert;
+  document.querySelector("#moon-target").inert = inert;
 }
 
-clockTarget.addEventListener("click", () => void openClock());
+clockTarget.addEventListener("click", (event) => {
+  clockOpenedByKeyboard = event.detail === 0; // detail 0: no pointer position, so the keyboard
+  void openClock();
+});
 clockBack.addEventListener("click", () => {
   if (clockPhase === "playing") void closeClock();
 });

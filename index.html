@@ -9,6 +9,7 @@
     <script src="app.js" defer></script>
     <script src="door-story.js" defer></script>
     <script src="clock-story.js" defer></script>
+    <script src="moon-story.js" defer></script>
   </head>
   <body>
     <main class="experience">
@@ -57,6 +58,8 @@
         >
           <img class="layer layer--sky-stars" src="assets/layers/gothic_assets/gothic_parallax/trimmed/01_sky_stars.png" style="left: 0px; top: 0px; width: 941px; height: 1672px" alt="" decoding="async">
           <img class="layer layer--moon" src="assets/layers/gothic_assets/gothic_parallax/trimmed/02_moon.png" style="left: 110px; top: 47px; width: 335px; height: 335px" alt="" decoding="async">
+          <!-- Story 3: the sleigh silhouette (invisible until the moon is tapped); moon-story.js keeps it just behind the hill. -->
+          <img class="sleigh" src="assets/story3/sleigh.png" alt="" decoding="async">
           <img class="layer layer--spiral-hill-body-trees-fence" src="assets/layers/gothic_assets/gothic_parallax/trimmed/03_spiral_hill_body_trees_fence.png" style="left: 0px; top: 156px; width: 941px; height: 418px" alt="" decoding="async">
           <img class="layer layer--spiral-tip" src="assets/layers/gothic_assets/gothic_parallax/trimmed/04_spiral_tip.png" style="left: 534px; top: 152px; width: 179px; height: 173px" alt="" decoding="async">
           <img class="layer layer--town-back-buildings" src="assets/layers/gothic_assets/gothic_parallax/trimmed/05_town_back_buildings.png" style="left: 0px; top: 303px; width: 941px; height: 366px" alt="" decoding="async">
@@ -89,6 +92,8 @@
           <button class="door-target" id="door-target" type="button" aria-label="Christmas-tree door. Tap to light its ornaments."></button>
           <!-- Story 2 trigger: a target over the tower's clock face. -->
           <button class="clock-target" id="clock-target" type="button" aria-label="Clock tower clock. Tap to look closer."></button>
+          <!-- Story 3 trigger: a circle over the moon. -->
+          <button class="moon-target" id="moon-target" type="button" aria-label="The moon. Tap it."></button>
           <!-- Story 2 close-up: its own 941x1672 scene, grown out of the clock when opened. -->
           <div class="closeup" id="clock-closeup" role="group" aria-label="Close-up of the clock face" hidden>
             <img class="closeup__scene" src="assets/story2/clock-closeup.webp" alt="" decoding="async">
